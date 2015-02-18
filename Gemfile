@@ -1,10 +1,13 @@
 source 'https://rubygems.org'
+#source 'http://192.168.0.5:4732'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem "execjs"
+gem "therubyracer"
+gem 'pg', '~> 0.17.1'
+gem 'pg_search', '~> 0.7.8'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
