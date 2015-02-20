@@ -6,19 +6,17 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-puts 'Create category'
-Category.create!({
-  name: 'En Adopción',
-})
-
-Category.create!({
-  name: 'Perdidos',
-})
-
-Category.create!({
-  name: 'Informes',
-})
-
-Category.create!({
+puts 'Create categories'
+[{
+  name: 'En Adopción'
+},{
+  name: 'Perdidos'
+},{
+  name: 'Informes'
+},{
   name: 'Reencuentro',
-})
+}].each do |category_info|
+  Category.create!({	
+    name: category_info[:name]
+  })
+end 
