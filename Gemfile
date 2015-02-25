@@ -14,6 +14,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'simple_form', '~> 3.0.2'
 gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'kaminari', '~> 0.16.1'
+gem 'bootstrap-kaminari-views', '~> 0.0.3'
 
 group :development do
   gem 'spring'
@@ -24,6 +27,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-rescue'
   gem 'minitest-rails', '~> 2.1.0'
+  gem "minitest-rails-capybara"
   gem 'minitest-matchers', '~> 1.4.1'
   gem 'factory_girl_rails', github: 'thoughtbot/factory_girl_rails'
 end

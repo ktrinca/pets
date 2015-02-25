@@ -1,0 +1,12 @@
+<%= form_tag url, method: :get, class: 'form-inline pull-right', role: 'form' do %>
+  <div class="form-group">
+    <div class="input-group">
+      <%= text_field_tag :look_for, params[:look_for], class: 'form-control', placeholder: 'Look for...' %>
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">
+          <span class="fa fa-search"></span>
+        </button>
+      </span>
+    </div>
+  </div>
+<% end %>
