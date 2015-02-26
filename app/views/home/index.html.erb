@@ -23,12 +23,15 @@
   
   <div id="content">
     <div class="content">
+      <ul>
+        <% @last_news.each do |last_news| %> 
+          <%= render('common/last_news', last_news: last_news) %>
+        <% end %>
+      </ul>
     </div>
-   
-    <%= render('commons/last_news', last_news: last_news) %>
     
     <div id="sidebar">
-       <div class="search">
+      <div class="search">
         <input type="text" name="s" value="Find">
         <button>&nbsp;</button>
         <label for="articles">
@@ -38,28 +41,7 @@
           <input type="radio" id="products" checked>
           PetMart Products</label>
       </div>
-      <div class="section">
-        <ul class="navigation">
-          <li class="active"><a href="#">Shopping Guides</a></li>
-          <li><a href="#">Discounted Items</a></li>
-        </ul>
-        <div class="aside">
-          <div>
-            <div>
-              <ul>
-                <li><a href="#">Pet Accesories </a> <a class="more" href="#">see all</a></li>
-                <li><a href="#">Bath Essentials</a> <a class="more" href="#">see all</a></li>
-                <li><a href="#">Pet Food</a> <a class="more" href="#">see all</a></li>
-                <li><a href="#">Pet Vitamins</a> <a class="more" href="#">see all</a></li>
-                <li><a href="#">Pet Needs</a> <a class="more" href="#">see all</a></li>
-                <li><a href="#">Pet Toy and Treats</a> <a class="more" href="#">see all</a></li>
-                <li><a href="#">Pet Supplies</a> <a class="more" href="#">see all</a></li>
-                <li><a href="#">Pet Emergency Kit</a> <a class="more" href="#">see all</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+      
     </div>
   </div>
   <div class="featured">
