@@ -38,3 +38,5 @@ group :test do
   gem 'simplecov', '~> 0.9.1', require: false
   gem 'database_cleaner'
 end
+
+gem 'rails_12factor', group: :production
