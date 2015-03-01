@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :category do
   	id 1
-  	name  'Denuncias'
+  	name  'Adopción'
   end
 end

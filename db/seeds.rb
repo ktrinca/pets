@@ -25,7 +25,7 @@ puts 'Create categories'
   })
 end 
 
-puts 'create Posts'
+puts 'Create Posts'
 [{
   title: 'Castracion Rincon',
   body: 'Hay castraciones gratuitas el horario es de 9 a 20hs es necesario estar temprano',

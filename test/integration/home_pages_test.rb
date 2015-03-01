@@ -8,7 +8,7 @@ class HomePagesTest < ActionDispatch::IntegrationTest
   test "listing all categories" do
     visit root_path
     categories = Category.all 
-    assert_equal 'Denuncias', categories.first.name
+    assert_equal 'Adopción', categories.first.name
   end
 
 end

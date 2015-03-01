@@ -1,0 +1,18 @@
+<div id="header"> 
+  <a href="#" id="logo">
+    <img src="/assets/logo.gif" width="310" height="114" alt="">
+  </a>
+    
+  <ul class="navigation">
+    <li class="active">
+      <%= link_to "Home", root_url%>
+    </li>
+
+      
+      <% @categories.each do |category| %>
+        <%= render('categories/category', category: category) %>
+      <% end %>
+      
+    <li><a href="contact.html">Contact us</a></li>
+  </ul>
+</div>
