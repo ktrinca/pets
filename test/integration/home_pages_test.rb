@@ -1,9 +1,7 @@
 require "test_helper"
 
 class HomePagesTest < ActionDispatch::IntegrationTest
-  before do
-    category =  FactoryGirl.create(:category)
-  end	
+  category =  FactoryGirl.create(:category)
   
   test "listing all categories" do
     visit root_path
