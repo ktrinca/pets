@@ -24,7 +24,8 @@ body {
 	border:0;
 }
 /**-------------- Navigation style ---------------**/
-  #header ul.navigation {
+
+#header ul.navigation {
 	list-style-type:none;
 	margin:-82px 0 0 300px;
 	padding:0;
@@ -33,13 +34,14 @@ body {
 #header ul.navigation li {
 	float:left;
 	height:35px;
-	width:107px;
+	width:100px;
 }
 #header ul.navigation li.active {
-	
+	background:url("menu.gif");
 	background-repeat:no-repeat;
-	background-position: 0 -160px;
+	background-position: left bottom;
 }
+
 #header ul.navigation li a {
 	text-decoration:none;
 	color:#2c1d00;
