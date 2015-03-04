@@ -1,5 +1,6 @@
 // import the CSS framework
-
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 body {
 	margin:0;
@@ -35,7 +36,7 @@ body {
 	width:107px;
 }
 #header ul.navigation li.active {
-	background:url("menu.gif");
+	
 	background-repeat:no-repeat;
 	background-position: 0 -160px;
 }
@@ -51,7 +52,7 @@ body {
 	background-repeat:no-repeat;
 	background-position:right;
 	height:35px;
-	padding:0 20px 0 20px;
+	padding:0 90px 0 30px;
 	text-align:center;
 	width:67px;
 }
