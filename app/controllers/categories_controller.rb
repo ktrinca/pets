@@ -9,9 +9,9 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category   = Category.find(params[:id])
-    @posts      = @category.posts
-    name_category = ActiveSupport::Inflector.transliterate("#{@category.name}")
+    @category     = Category.find(params[:id])
+    @posts        = @category.posts
+    @name_category = ActiveSupport::Inflector.transliterate("#{@category.name}").downcase
   end
 
   def load_categories

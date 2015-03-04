@@ -1,16 +1,23 @@
-<title> traga </title>
 <div id="body">
+  
   <div id="content">
     <div class="search">
-      <input type="text" name="s" value="Find">
+      <input type="text" name="s" value="Buscar">
       <button>&nbsp;</button>
       <label for="articles">
         <input type="radio" id="articles">
-        Articles</label>
+        Titulo</label>
       <label for="products">
         <input type="radio" id="products" checked>
-        Fecha</label>
-    </div>
-  </div>  
+        Contenido</label>
+    </div> 
   
+  <%= link_to new_post_path, class: 'btn btn-primary navbar-btn pull-left' do %>
+            <i class="fa fa-plus-square"></i> <span>Agregar Publicación</span>
+          <% end %>
+  </div>
+
+  <%= render("categories/#{@name_category}/show", category: @category) %>
+  
+
 </div>  

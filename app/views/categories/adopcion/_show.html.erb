@@ -1,14 +1,11 @@
-<div id="body">
-  <div id="content">
-    <div class="search">
-      <input type="text" name="s" value="Find">
-      <button>&nbsp;</button>
-      <label for="articles">
-        <input type="radio" id="articles">
-        Articles</label>
-      <label for="products">
-        <input type="radio" id="products" checked>
-        PetMart Products</label>
-    </div>
-  </div>  
+<div class="content">
+  <ul>
+    <% @posts.each do |post| %>
+      <li> <a href="#"><img src="images/koi2.jpg" width="140" height="250" alt=""></a>
+          <h2>Food Area</h2>
+          <span><a href="#">Dog Food</a></span> <span><a href="#">Cat Food</a></span> <span><a href="#">Bird Food</a></span> <span><a href="#">Fish Food</a></span> <span><a href="#">Reptile Food</a></span> <span><a href="#">Small Pet Food</a></span> <span><a href="#">Large Pet Food</a></span> <span><a class="more" href="#">View all</a></span> 
+      </li> 
+    <% end %>
+  </ul>  
 </div>  
+  
