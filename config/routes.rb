@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   resources :provinces
 
-  resources :posts
+  resources :posts do
+   resources :post_images
+  end  
 
 
   resources :categories
