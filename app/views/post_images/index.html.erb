@@ -1,8 +1,8 @@
-<div id="images-container" data-url="<%= item_item_images_path(@item) %>" data-browse-button="images-add" data-list="item_image">
+<div id="images-container" data-url="<%= post_post_images_path(@post) %>" data-browse-button="images-add" data-list="post_image">
   <div class="row">
     <div class="col-md-12">
       <div class="page-header">
-        <h1>Item Images listing <small>Item #<%= @item.id %></small></h1>
+        <h1>post Images listing <small>post #<%= @post.id %></small></h1>
       </div>
       <%= render('common/messages') %>
       <div class="panel panel-default">
@@ -10,26 +10,26 @@
           <thead>
             <%= render('header') %>
           </thead>
-          <tbody id="item_image" class="sortable" data-url="<%= sort_item_item_images_path(@item) %>">
-            <%= render(@item_images) %>
+          <tbody id="post_image" class="sortable" data-url="<%= sort_post_post_images_path(@post) %>">
+            <%= render(@post_images) %>
           </tbody>
         </table>
         <div class="panel-footer">
-          <%= paginate(@item_images, theme: 'twitter-bootstrap-3') %>
+          <%= paginate(@post_images, theme: 'twitter-bootstrap-3') %>
         </div>
       </div>
     </div>
   </div>
   <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
     <div class="container-fluid clearfix">
-      <% if policy(ItemImage.new).new? %>
+      <% if postImage.new? %>
         <%= link_to '#', class: 'btn btn-primary navbar-btn pull-left', id: 'images-add' do %>
           <span class="glyphicon glyphicon-upload"></span> Upload photos
         <% end %>
       <% end %>
-      <% if policy(@item).edit? %>
-        <%= link_to item_path(@item), class: 'btn navbar-btn btn-sm btn-default pull-right' do %>
-          <i class="fa fa-search"></i> <span class="hidden-xs">Back to Item</span>
+      <% if policy(@post).edit? %>
+        <%= link_to post_path(@post), class: 'btn navbar-btn btn-sm btn-default pull-right' do %>
+          <i class="fa fa-search"></i> <span class="hidden-xs">Back to post</span>
         <% end %>
       <% end %>
     </div>

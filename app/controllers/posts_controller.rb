@@ -1,6 +1,7 @@
 class PostsController < BaseController
+  before_filter :load_categories
+
   def new
-    @categories = Category.all
     @province_form_presenter = ProvinceFormPresenter.new(view_context)
     @post       = Post.new 
     @post.build_contact
@@ -19,7 +20,6 @@ class PostsController < BaseController
   end
 
   def show
-    @categories = Category.all
     @post = Post.find(params[:id])
   end  
 
@@ -27,5 +27,9 @@ class PostsController < BaseController
 
   def post_params
     permitted_params.permit
+  end
+
+  def load_categories
+    @categories = Category.all
   end	
 end

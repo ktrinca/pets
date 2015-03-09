@@ -5,12 +5,12 @@ Rails.application.routes.draw do
 
   resources :provinces
 
-  resources :posts do
-   resources :post_images
+  resources :categories do
+    resources :posts do
+     resources :post_images
+    end
   end  
 
-
-  resources :categories
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
