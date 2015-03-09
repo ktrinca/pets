@@ -4,7 +4,7 @@
       <h1>Nueva Publicación de Adopción</h1>
     </div>
     
-    <%= simple_form_for @category_post, @post ], html: { role: 'form' } do |f| %>
+    <%= simple_form_for [@category, @post], html: { role: 'form' } do |f| %>
       <%= render('form', f: f, js: false) %>
     <% end %>
      

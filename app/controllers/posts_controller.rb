@@ -4,7 +4,7 @@ class PostsController < BaseController
 
   def new
     @province_form_presenter = ProvinceFormPresenter.new(view_context)
-    @post       = Post.new 
+    @post       = @category.posts.build
     @post.build_contact
   end
 
@@ -17,7 +17,7 @@ class PostsController < BaseController
       @post = Post.new
     end
     
-    respond_with(@post, location: post_url(@post))
+    respond_with([@category, @post])
   end
 
   def show
@@ -35,6 +35,6 @@ class PostsController < BaseController
   end
 
   def find_category
-    @post = Category.find(params[:category_id])
+    @category = Category.find(params[:category_id])
   end
 end
