@@ -22,6 +22,9 @@ class PostsController < BaseController
 
   def show
     @post = Post.find(params[:id])
+  end
+
+  def index
   end  
 
   private

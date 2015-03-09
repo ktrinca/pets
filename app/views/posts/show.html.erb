@@ -1,70 +1,20 @@
 <div class="row">
   <div class="col-md-12">
     <div class="page-header">
-      <h1>Item Details</h1>
+      <h1>category Details</h1>
     </div>
     <%= render('common/messages') %>
   </div>
   <div class="col-md-6 col-sm-12">
-    <% if @contract.present? %>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4 class="panel-title">Contract Info</h4>
-        </div>
-        <div class="panel-body">
-          <dl>
-            <dt>ID #</dt>
-            <dd><%= @contract.id %></dd>
-            <dt>Customer</dt>
-            <dd><%= @contract.customer_full_name %></dd>
-            <dt>Contract Reason</dt>
-            <dd><%= @contract.contract_reason_name %></dd>
-            <dt>Pickup Date</dt>
-            <dd><%= @contract.pickup_dates_to_sentence %></dd>
-          </dl>
-        </div>
-      </div>
-    <% end %>
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Item info</h3>
+        <h3 class="panel-title">category info</h3>
       </div>
       <div class="panel-body">
         <dl>
           <dt>Name</dt>
-          <dd><%= @item.name %></dd>
-          <dt>Description</dt>
-          <dd><%= @item.description %></dd>
-          <dt>Original Price</dt>
-          <dd><%= @item.original_price %></dd>
-          <dt>Year bought</dt>
-          <dd><%= @item.year_bought %></dd>
-          <dt>Brand</dt>
-          <dd><%= @item.brand %></dd>
-          <dt>Model</dt>
-          <dd><%= @item.model %></dd>
-          <dt>Materials</dt>
-          <dd><%= @item.materials %></dd>
-          <dt>Quantity</dt>
-          <dd><%= @item.quantity %></dd>
-          <dt>Total pieces</dt>
-          <dd><%= @item.total_pieces %></dd>
-          <dt>Issues</dt>
-          <dd><%= @item.issues %></dd>
-          <dt>Condition</dt>
-          <dd><%= @item.condition %></dd>
-          <dt>Width</dt>
-          <dd><%= @item.width %></dd>
-          <dt>Height</dt>
-          <dd><%= @item.height %></dd>
-          <dt>Depth</dt>
-          <dd><%= @item.depth %></dd>
-          <dt>Extra pieces</dt>
-          <dd><%= @item.extra_pieces %></dd>
-          <dt>Notes</dt>
-          <dd><%= @item.notes %></dd>
-          <dt>Status</dt>
-          <dd><%= @item.status %></dd>
+          <dd><%= @category.name %></dd>
+          
         </dl>
       </div>
     </div>
@@ -74,10 +24,7 @@
       </div>
       <div class="panel-body">
         <dl>
-          <dt>Expected channel</dt>
-          <dd><%= Channel.find(@item.expected_channel) if @item.expected_channel %></dd>
-          <dt>Actual channel</dt>
-          <dd><%= @item.actual_channel %><%= Channel.find(@item.actual_channel) if @item.actual_channel %></dd>
+          <dt>Que poner aca???</dt>
         </dl>
       </div>
     </div>
@@ -85,11 +32,11 @@
   <div class="col-md-6 col-sm-12">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Item images</h3>
+        <h3 class="panel-title">Posts</h3>
       </div>
       <div class="panel-body">
-        <% @item.item_images.each do |item_image| %>
-          <%= image_tag item_image.image.url, width: 100 %>
+        <% @category.posts.each do |category_image| %>
+          <%= image_tag category_image.image.url, width: 100 %>
         <% end %>
       </div>
     </div>
@@ -97,18 +44,9 @@
 </div>
 <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
   <div class="container-fluid clearfix">
-    <%= link_to 'Back to listing', items_path, class: 'btn btn-default navbar-btn btn-sm pull-left' %>
+    <%= link_to 'Back to listing', category_path, class: 'btn btn-default navbar-btn btn-sm pull-left' %>
     <div class="btn-group pull-right">
-      <% if policy(@item.item_images).index? %>
-        <%= link_to item_item_images_path(@item), class: 'btn btn-sm btn-default navbar-btn' do %>
-          <i class="fa fa-image"></i> <span class="hidden-xs">Images</span>
-        <% end %>
-      <% end %>
-      <% if policy(@item).edit? %>
-        <%= link_to edit_item_path(@item), class: 'btn btn-sm btn-default navbar-btn' do %>
-          <i class="fa fa-edit"></i> <span class="hidden-xs">Edit</span>
-        <% end %>
-      <% end %>
+      
     </div>
   </div>
 </nav>
