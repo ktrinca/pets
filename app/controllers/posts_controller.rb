@@ -1,5 +1,6 @@
 class PostsController < BaseController
   before_filter :load_categories
+  before_action :find_category
 
   def new
     @province_form_presenter = ProvinceFormPresenter.new(view_context)
@@ -31,5 +32,9 @@ class PostsController < BaseController
 
   def load_categories
     @categories = Category.all
-  end	
+  end
+
+  def find_category
+    @post = Category.find(params[:category_id])
+  end
 end
