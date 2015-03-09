@@ -19,6 +19,9 @@ gem 'kaminari', '~> 0.16.1'
 gem 'bootstrap-kaminari-views', '~> 0.0.3'
 gem 'select2-rails', '~> 3.5.9.1'
 gem 'carrierwave', '~> 0.10.0'
+gem 'plupload-rails', '~> 1.2.1'
+gem 'action_parameter', '~> 0.0.3'
+
 
 group :development do
   gem 'spring'
