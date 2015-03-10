@@ -10,6 +10,6 @@ class PostImage < ActiveRecord::Base
   protected
 
   def default_position
-    self.position = item.item_images.count + 1
+    self.position = post.post_images.count + 1
   end
 end

@@ -1,8 +1,8 @@
-<div id="images-container" data-url="<%= post_post_images_path(@post) %>" data-browse-button="images-add" data-list="post_image">
+<div id="images-container" data-url="<%= category_post_post_images_path(@category, @post) %>" data-browse-button="images-add" data-list="post_image">
   <div class="row">
     <div class="col-md-12">
       <div class="page-header">
-        <h1>post Images listing <small>post #<%= @post.id %></small></h1>
+        <h1>post Images listing <small>post #<%= @post.title %></small></h1>
       </div>
       <%= render('common/messages') %>
       <div class="panel panel-default">
@@ -10,7 +10,7 @@
           <thead>
             <%= render('header') %>
           </thead>
-          <tbody id="post_image" class="sortable" data-url="<%= sort_post_post_images_path(@post) %>">
+          <tbody id="post_image" class="sortable" data-url="<%= sort_category_post_post_images_path(@category, @post) %>">
             <%= render(@post_images) %>
           </tbody>
         </table>
