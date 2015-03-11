@@ -2,6 +2,7 @@ class PostImagesController < BaseController
   before_action :find_category_post
   
   def index
+    @categories = Category.all
     @post_images = @post.post_images.sorted.page(params[:page])
     respond_with(@post_images, location: category_post_post_images_url)
   end
@@ -23,6 +24,7 @@ class PostImagesController < BaseController
   end	
 
   private
+
 
   def find_category_post
     @post = Post.find(params[:post_id])

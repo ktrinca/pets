@@ -22,16 +22,16 @@
   </div>
   <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
     <div class="container-fluid clearfix">
-      <% if postImage.new? %>
+      
         <%= link_to '#', class: 'btn btn-primary navbar-btn pull-left', id: 'images-add' do %>
           <span class="glyphicon glyphicon-upload"></span> Upload photos
         <% end %>
-      <% end %>
-      <% if policy(@post).edit? %>
-        <%= link_to post_path(@post), class: 'btn navbar-btn btn-sm btn-default pull-right' do %>
+      
+      
+        <%= link_to category_post_path(@category, @post), class: 'btn navbar-btn btn-sm btn-default pull-right' do %>
           <i class="fa fa-search"></i> <span class="hidden-xs">Back to post</span>
         <% end %>
-      <% end %>
+      
     </div>
   </nav>
 </div>

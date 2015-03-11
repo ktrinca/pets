@@ -1,0 +1,16 @@
+<tr id="<%= post_image.id %>">
+  <td class="handle"><i class="fa fa-sort"></i></td>
+  <td><%= image_tag(post_image.image.url, width: 100) %></td>
+  <td><%= post_image.description %></td>
+  <td>
+    <div class="btn-group pull-right">
+      <%= link_to edit_item_post_image_path(@item, post_image), class: 'btn btn-sm btn-default' do %>
+        <i class="fa fa-edit"></i> <span class="hidden-xs">Edit</span>
+      <% end %>
+      
+      <%= link_to item_post_image_path(@item, post_image), data: { confirm: 'are you sure?' }, method: :delete, class: 'btn btn-sm btn-danger' do %>
+        <i class="fa fa-trash-o"></i> <span class="hidden-xs">Delete</span>
+      <% end %>
+    </div>
+  </td>
+</tr>
