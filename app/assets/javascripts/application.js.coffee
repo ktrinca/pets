@@ -7,3 +7,11 @@
 #= require plupload.dev
 #= require images
 #
+
+$ ->
+  # Select2 settings
+  $('select.select2').select2
+    allowClear: true
+
+  $('input[type="submit"]').click (e) ->
+    $(@).button('loading')

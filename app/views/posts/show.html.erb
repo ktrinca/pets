@@ -41,8 +41,8 @@
         <h3 class="panel-title">Fotos</h3>
       </div>
       <div class="panel-body">
-        <% @category.posts.each do |category_image| %>
-          <%= image_tag category_image.image.url, width: 100 %>
+        <% @post.post_images.each do |post_image| %>
+          <%= image_tag post_image.image.url, width: 100 %>
         <% end %>
       </div>
     </div>
