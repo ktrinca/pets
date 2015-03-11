@@ -1,6 +1,7 @@
 class PostImagesController < BaseController
   before_action :find_category_post
   before_filter :load_categories
+  
   def index
     @post_images = @post.post_images.sorted.page(params[:page])
     respond_with(@post_images, location: category_post_post_images_url)
@@ -10,8 +11,7 @@ class PostImagesController < BaseController
     @post_image = @post.post_images.build
   end
   
-  def
-   create
+  def create
     @post_image = @post.post_images.build
     @post_image.image = params[:file]  
     @post_image.save
