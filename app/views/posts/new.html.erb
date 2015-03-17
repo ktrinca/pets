@@ -6,6 +6,7 @@
     
     <%= simple_form_for [@category, @post], html: { role: 'form' } do |f| %>
       <%= render('form', f: f, js: false) %>
+      <%= hidden_field_tag :type, params[:type] if params[:type] %>
     <% end %>
      
     

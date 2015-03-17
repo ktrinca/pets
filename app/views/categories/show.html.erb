@@ -12,12 +12,5 @@
         Contenido</label>
     </div> 
   
-  <%= link_to new_category_post_path(@category), class: 'btn btn-primary navbar-btn pull-left' do %>
-            <i class="fa fa-plus-square"></i> <span>Agregar Publicación</span>
-          <% end %>
-  </div>
-
-  <%= render("categories/#{@name_category}/show", category: @category) %>
-  
-
+    <%= render("categories/#{@name_category}/show", category: @category) %>
 </div>  
