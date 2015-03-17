@@ -10,7 +10,7 @@ class PostsController < BaseController
 
   def create
     @post = Post.new(post_params.merge(pet: params[:pet]))
-    
+
     if @post.save
       flash[:notice] = 'Publicacion Creada!'
     else
@@ -25,6 +25,9 @@ class PostsController < BaseController
   end
 
   def index
+    if params[:pet] 
+     @posts = Post.where(pets: params[:pet])  
+    end  
   end  
 
   private
