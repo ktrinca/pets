@@ -1,4 +1,6 @@
 class Post < ActiveRecord::Base
+  enum type: %w(perros gatos otros)
+
   belongs_to :category
   belongs_to :contact
   has_many   :comments
