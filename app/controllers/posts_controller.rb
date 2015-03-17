@@ -9,7 +9,7 @@ class PostsController < BaseController
   end
 
   def create
-    @post = Post.new(post_params.merge(types: :perros))
+    @post = Post.new(post_params.merge(pet: params[:pet]))
     
     if @post.save
       flash[:notice] = 'Publicacion Creada!'
