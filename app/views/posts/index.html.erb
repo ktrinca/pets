@@ -4,10 +4,25 @@
     <div class="search">
       
     </div> 
+   
+    <% if params[:all] %>
+     <div class="content"> 
+        <ul>
+          <% @posts.each do |post| %>
+            <%= render('posts/post', post: post) %>
+          <% end %>
+        </ul>  
+      </div>   
+    <% else %>
+      <div class="row">  
+        <div class="content">
+          <ul>
+            <%= render('access_links') %> 
+          </ul>  
+        </div>
+      </div>
+    <% end %>
     
-    <div class="row">
-      
-    </div>
     
   </div>
 
