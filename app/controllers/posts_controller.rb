@@ -25,10 +25,14 @@ class PostsController < BaseController
   end
 
   def index
-    if params[:pet] 
-     @posts = Post.where(pets: params[:pet])  
-    end  
-  end  
+    if params[:pubs] 
+      @posts = Post.where(pets: params[:pet])  
+    end   
+  end
+
+  #def publications
+     
+  #end  
 
   private
 

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :categories do
     resources :posts do
+      get :publications, on: :collection
       resources :post_images do
         patch 'sort', on: :collection
       end 
