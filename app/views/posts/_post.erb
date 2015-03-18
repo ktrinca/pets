@@ -1,5 +1,6 @@
 <li> 
-	<%= image_tag(post.post_images.first.image.url, width: 114, height: 160) if !post.post_images.first.nil?%>
+	
+	<%= image_tag(post.image, width: 114, height: 160)%>
 	<h2><%=post.title%></h2>
   <p><%=post.body%><%= link_to 'Ver todo', category_post_path(@category, post)%></p>
 </li>

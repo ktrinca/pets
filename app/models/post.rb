@@ -11,4 +11,9 @@ class Post < ActiveRecord::Base
   validates :title, :body, :presence => 'Complete por favor'
   
   scope :last_news, -> {where(category_id: 3).order(created_at: :desc) }
+  
+  # Instance methods
+  def image
+    @image = self.post_images.exists? ? self.post_images.first.image.url : 'puppy.jpg'
+  end
 end
