@@ -1,5 +1,8 @@
-<tr class="post">
-  <td><%= post.title %></td>
-  <td><%= post.body %></td>
-  <td><%= image_tag(post.image, width: 114, height: 160)%></td>
-</tr>
+
+<div>
+  <h2><%= link_to post.title, category_post_path(@category, post) %></h2>
+ 
+  <small><em><%= image_tag(post.image, width: 114, height: 160)%></em></small>
+ 
+  <p><%= truncate(strip_tags(post.body)) %></p>
+</div>
