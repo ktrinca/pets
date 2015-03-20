@@ -26,7 +26,7 @@ class PostsController < BaseController
 
   def index
     if params[:all] 
-      @posts = Post.page(params[:page]) 
+      @posts = Post.where(:pet => params[:pet]).page(params[:page]) 
     end  
   end
 
