@@ -7,6 +7,7 @@
 #= require moxie
 #= require plupload.dev
 #= require images
+#= require jquery.history.js
 #= require bind_with_delay
 #= require waypoints
 #= require pagination
