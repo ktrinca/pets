@@ -6,7 +6,6 @@ class PostsController < BaseController
     @province_form_presenter = ProvinceFormPresenter.new(view_context)
     @post = @category.posts.build
     @post.build_contact
-     
   end
 
   def create
