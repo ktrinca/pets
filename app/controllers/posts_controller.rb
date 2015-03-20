@@ -26,8 +26,8 @@ class PostsController < BaseController
 
   def index
     if params[:all] 
-      @posts = Post.last(5) 
-    end   
+      @posts = Post.page(params[:page]) 
+    end  
   end
 
  

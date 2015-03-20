@@ -7,12 +7,24 @@
    
     <% if params[:all] %>
      <div class="content"> 
-        <ul>
-          <% @posts.each do |post| %>
-            <%= render('posts/post', post: post) %>
-          <% end %>
-        </ul>  
-      </div>   
+        <table id="posts">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>image</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody class="page">
+    <%= render @posts %>
+  </tbody>
+</table>
+        <%= paginate @posts %> 
+        
     <% else %>
       <div class="row">  
         <div class="content">

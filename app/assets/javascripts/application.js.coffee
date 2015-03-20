@@ -6,6 +6,7 @@
 #= require moxie
 #= require plupload.dev
 #= require images
+#= require jquery.infinitescroll
 #
 
 $ ->

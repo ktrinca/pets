@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
   include PgSearch
   enum pet: %w(perros gatos otros)
-
+  
   belongs_to :category
   belongs_to :contact
   has_many   :comments
@@ -12,6 +12,7 @@ class Post < ActiveRecord::Base
   
   scope :last_news, -> {where(category_id: 3).order(created_at: :desc) }
   
+  paginates_per 2
   # Instance methods
   def image
     @image = self.post_images.exists? ? self.post_images.first.image.url : 'puppy.jpg'
