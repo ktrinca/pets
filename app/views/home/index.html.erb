@@ -1,66 +1,15 @@
-<div id="body">
-    <div class="banner">&nbsp;</div>
-  
-    <div id="content">
-      <div class="content">
-        <ul>
-          <% @last_news.each do |last_news| %> 
-            <%= render('common/last_news', last_news: last_news) %>
-          <% end %>
-        </ul>
-      </div>
-    
-      <div id="sidebar">
-        <div class="search">
-          <input type="text" name="s" value="Find">
-          <button>&nbsp;</button>
-          <label for="articles">
-            <input type="radio" id="articles">
-            Articles
-          </label>
-          
-          <label for="products">
-            <input type="radio" id="products" checked>
-            PetMart Products
-          </label>
+<!-- Header -->
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <%= image_tag("profile.png", class: "img-responsive") %>
+        <div class="intro-text">
+          <span class="name">FaunArea</span>
+            <hr class="star-light">
+          <span class="skills">Leyenda de lo que querramos poner</span>
         </div>
-      
       </div>
     </div>
-    
-    <div class="featured">
-      <ul>
-        <li><a href="#"><img src="assets/organic-and-chemical-free.jpg" width="300" height="90" alt=""></a></li>
-        <li><a href="#"><img src="assets/good-food.jpg" width="300" height="90" alt=""></a></li>
-        <li class="last"><a href="#"><img src="assets/pet-grooming.jpg" width="300" height="90" alt=""></a></li>
-      </ul>
-    </div>
   </div>
-
-  <div id="footer">
-    <div class="section">
-      <ul>
-        <li> <img src="assets/friendly-pets.jpg" width="240" height="186" alt="">
-          <h2><a href="#">Friendly Pets</a></h2>
-          <p> Lorem ipsum dolor sit amet, consectetuer adepiscing elit, sed diam nonummy nib. <a class="more" href="#">Read More</a> </p>
-        </li>
-        <li> <img src="assets/pet-lover2.jpg" width="240" height="186" alt="">
-          <h2><a href="#">How dangerous are they</a></h2>
-          <p> Lorem ipsum dolor sit amet, cons ectetuer adepis cing, sed diam euis. <a class="more" href="#">Read More</a> </p>
-        </li>
-        
-        <li> <img src="assets/healthy-dog.jpg" width="240" height="186" alt="">
-          <h2><a href="#">Keep them healthy</a></h2>
-          <p> Lorem ipsum dolor sit amet, consectetuer adepiscing elit, sed diam nonu mmy. <a class="more" href="#">Read More</a> </p>
-        </li>
-        <li>
-          <h2><a href="#">Love...love...love...pets</a></h2>
-          <p> Lorem ipsum dolor sit amet, consectetuer adepiscing elit, sed diameusim. <a class="more" href="#">Read More</a> </p>
-          <img src="assets/pet-lover.jpg" width="240" height="186" alt=""> </li>
-      </ul>
-    </div>
-    
-    <div id="footnote">
-      <div class="section">Copyright &copy; 2012 <a href="#">Company Name</a> All rights reserved | Website Template By <a target="_blank" href="http://www.freewebsitetemplates.com/">freewebsitetemplates.com</a></div>
-    </div>
-  </div>
+</header>
