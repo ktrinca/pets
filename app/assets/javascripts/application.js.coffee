@@ -1,7 +1,12 @@
 #= require jquery
 #= require jquery_ujs
 #= require bootstrap
+#= require bootstrap.min
 #= require bootstrap-sprockets
+#= require jquery.easing.min
+#= require classie
+#= require cbpAnimatedHeader
+#= freelancer
 #= require select2
 #= require jquery.tablednd
 #= require moxie
