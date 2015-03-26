@@ -4,12 +4,13 @@ class PostsController < BaseController
 
   def new
     @province_form_presenter = ProvinceFormPresenter.new(view_context)
-    @post = @category.posts.build
+    @post = Post.new
+    @post.build_category
     @post.build_contact
   end
 
   def create
-    @post = Post.new(post_params.merge(pet: params[:pet]))
+    @post = Post.new(post_params.merge(pet: params[:pet], category_id: params[:category_id]))
 
     if @post.save
       flash[:notice] = 'Publicacion Creada!'
