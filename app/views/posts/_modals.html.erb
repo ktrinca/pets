@@ -1,0 +1,30 @@
+<!-- CategoryModal Modals -->
+<% @categories.each do |category| %>
+  <div class="portfolio-modal modal fade" id="<%="#{category.name_as_folder}Modal"%>" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl">
+          </div>
+        </div>
+      </div>
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+            <div class="modal-body">
+              <h2>Adopción</h2>
+              <hr class="star-primary">
+              <img src="img/portfolio/cabin.png" class="img-responsive img-centered" alt="">
+              <ul>
+                <% @category = Category.find(1) %>
+                <%= render("categories/#{category.name_as_folder}/show", category: @category) %>
+              </ul>  
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>  

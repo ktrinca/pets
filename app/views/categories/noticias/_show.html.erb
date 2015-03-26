@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-xs-6 col-md-3">
+     <div class="thumbnail">	
+      <%= link_to category_posts_path(@category, :pet => :gatos), class: 'btn btn-primary btn-lg' do %>
+        <i class="fa fa-plus-square"></i> <span>Gatos</span>
+      <% end %>  
+     </div> 
+    </div> 
+     
+    <div class="col-xs-6 col-md-3"> 
+     <div class="thumbnail">
+      <%= link_to category_posts_path(@category, :pet => :perros), class: 'btn btn-primary btn-lg' do %>
+        <i class="fa fa-plus-square"></i> <span>Perros</span>
+      <% end %>  
+     </div> 
+    </div>
+
+    <div class="col-xs-6 col-md-3"> 
+     <div class="thumbnail">
+      <%= link_to category_posts_path(@category, :pet => :otros), class: 'btn btn-primary btn-lg' do %>
+        <i class="fa fa-plus-square"></i> <span>Otros</span>
+      <% end %>  
+    </div>
+
+      </div>
+</div> 
+
+
+
+
+
+  

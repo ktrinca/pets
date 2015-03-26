@@ -6,10 +6,10 @@
         <hr class="star-primary">
       </div>
     </div>
-    
+   
     <div class="row">
       <div class="col-sm-4 portfolio-item">
-        <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+        <a href="#adopcionModal" class="portfolio-link" data-toggle="modal">
           <div class="caption">
             <div class="caption-content">
               <i class="fa fa-search-plus fa-3x"></i>
@@ -17,7 +17,6 @@
           </div>
           <%= image_tag("cabin.png", class: "img-responsive")%>
         </a>
-        
       </div>
       
       <div class="col-sm-4 portfolio-item">
@@ -77,3 +76,5 @@
     </div>
   </div>
 </section>
+
+<%= render('posts/modals', categories: @categories) %>
