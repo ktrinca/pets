@@ -1,37 +1,39 @@
-<div id="images-container" data-url="<%= category_post_post_images_path(@category, @post) %>" data-browse-button="images-add" data-list="post_image">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="page-header">
-        <h1>post Images listing <small>post #<%= @post.title %></small></h1>
-      </div>
-      <%= render('common/messages') %>
-      <div class="panel panel-default">
-        <table class="table table-striped table-condensed">
-          <thead>
-            <%= render('header') %>
-          </thead>
-          <tbody id="post_image" class="sortable" data-url="<%= sort_category_post_post_images_path(@category, @post) %>">
-            <%= render(@post_images) %>
-          </tbody>
-        </table>
-        <div class="panel-footer">
-          
+<section id="categories">
+  <div id="images-container" data-url="<%= category_post_post_images_path(@category, @post) %>" data-browse-button="images-add" data-list="post_image">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="page-header">
+          <h1>post Images listing <small>post #<%= @post.title %></small></h1>
         </div>
+        <%= render('common/messages') %>
+        <div class="panel panel-default">
+          <table class="table table-striped table-condensed">
+            <thead>
+              <%= render('header') %>
+            </thead>
+            <tbody id="post_image" class="sortable" data-url="<%= sort_category_post_post_images_path(@category, @post) %>">
+              <%= render(@post_images) %>
+            </tbody>
+          </table>
+          
+          <div class="panel-footer">
+          
+          </div>
+       </div>
+      
       </div>
     </div>
-  </div>
-  <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
-    <div class="container-fluid clearfix">
-      
+    <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+    
+      <div class="container-fluid clearfix">
         <%= link_to '#', class: 'btn btn-primary navbar-btn pull-left', id: 'images-add' do %>
           <span class="glyphicon glyphicon-upload"></span> Upload photos
         <% end %>
       
-      
         <%= link_to category_post_path(@category, @post), class: 'btn navbar-btn btn-sm btn-default pull-right' do %>
           <i class="fa fa-search"></i> <span class="hidden-xs">Back to post</span>
         <% end %>
-      
-    </div>
-  </nav>
-</div>
+      </div>
+    </nav>
+  </div>
+</section>

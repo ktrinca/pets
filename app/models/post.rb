@@ -12,7 +12,7 @@ class Post < ActiveRecord::Base
   
   scope :last_news, -> {where(category_id: 3).order(created_at: :desc) }
   
-  self.per_page = 2
+  self.per_page = 3
   
   # Instance methods
   def image

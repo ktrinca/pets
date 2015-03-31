@@ -1,7 +1,17 @@
-<div>
-  <h2><%= link_to post.title, category_post_path(@category, post) %></h2>
- 
-  <small><em><%= image_tag(post.image, width: 114, height: 160)%></em></small>
- 
-  <p><%= truncate(strip_tags(post.body)) %></p>
+<div class="row">
+  <% @posts.each do |post| %>
+    <div class="col-sm-4 portfolio-item">
+      <%= link_to '',category_post_path(@category, post), class: "portfolio-link" %>
+      <a href="#adopcionModal" class="portfolio-link" data-toggle="modal">
+        <div class="caption">
+          <div class="caption-content">
+            <%=post.title%>
+          </div>
+         
+        </div>
+        <%= image_tag(post.image, class: "img-responsive")%>
+      </a>
+      <p> <%= post.body %> </p>
+    </div>
+  <% end %>
 </div>
