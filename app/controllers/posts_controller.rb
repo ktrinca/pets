@@ -17,7 +17,7 @@ class PostsController < BaseController
       @post = Post.new
     end
     
-    respond_with([@category, @post])
+    respond_with([@category, @post], pet: params[:pet])
   end
 
   def show

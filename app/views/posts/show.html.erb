@@ -50,7 +50,7 @@
 </div>
 <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
   <div class="container-fluid clearfix">
-    <%= link_to 'Back to listing', category_path(@category), class: 'btn btn-default navbar-btn btn-sm pull-left' %>
+    <%= link_to 'Back to listing', category_posts_path(@category, pet: params[:pet]), class: 'btn btn-default navbar-btn btn-sm pull-left' %>
     <div class="btn-group pull-right">
       
         <%= link_to category_post_post_images_path(@category, @post), class: 'btn btn-sm btn-default navbar-btn' do %>
