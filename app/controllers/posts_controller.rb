@@ -26,7 +26,7 @@ class PostsController < BaseController
 
   def index
     if params[:all] 
-      @posts = Post.where(:pet => Post.pets[params[:pet]]).page(params[:page]) 
+      @posts = @category.posts.paginate :page => params[:page], :per_page => 2
     end  
   end
 
