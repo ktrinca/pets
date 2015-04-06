@@ -12,19 +12,19 @@
       
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 col-lg-offset-2">
+          <div class="col-md-12">
             <div class="modal-body">
               <h2>Adopción</h2>
               <hr class="star-primary">
-              <%= image_tag("cabin.png", class: "img-responsive")%>
-              <ul>
-                <% @category = Category.find(1) %>
-                <%= render("categories/#{category.name_as_folder}/show", 
-                    category: @category) %>
-              </ul>  
-              
             </div>
+             <ul>
+            <% @category = Category.find(1) %>
+            <%= render("categories/#{category.name_as_folder}/show", 
+              category: @category) %>
+          </ul>
+            
           </div>
+          
         </div>
       </div>
     </div>
