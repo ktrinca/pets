@@ -59,12 +59,12 @@ var classie = {
   // full names
   hasClass: hasClass,
   addClass: addClass,
-  removeClass: removeClass,
+  
   toggleClass: toggleClass,
   // short names
   has: hasClass,
   add: addClass,
-  remove: removeClass,
+ 
   toggle: toggleClass
 };
 
