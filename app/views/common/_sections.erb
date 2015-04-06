@@ -8,71 +8,18 @@
     </div>
    
     <div class="row">
-      <div class="col-sm-4 portfolio-item">
-        <a href="#adopcionModal" class="portfolio-link" data-toggle="modal">
-          <div class="caption">
-            <div class="caption-content">
-              <i class="fa fa-search-plus fa-3x"></i>
+      <% @categories.each do |category|%>
+        <div class="col-sm-6 portfolio-item">
+          <a href="<%="#category.name_as_folder"%>" class="portfolio-link" data-toggle="modal">
+            <div class="caption">
+              <div class="caption-content">
+                <i class="fa fa-search-plus fa-3x"></i>
+              </div>
             </div>
-          </div>
-          <%= image_tag("cabin.png", class: "img-responsive")%>
-        </a>
-      </div>
-      
-      <div class="col-sm-4 portfolio-item">
-        <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-          <div class="caption">
-            <div class="caption-content">
-              <i class="fa fa-search-plus fa-3x"></i>
-                </div>
-            </div>
-            <%= image_tag("cake.png", class: "img-responsive") %>
-        </a>
-      </div>
-      
-      <div class="col-sm-4 portfolio-item">
-        <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-          <div class="caption">
-            <div class="caption-content">
-              <i class="fa fa-search-plus fa-3x"></i>
-            </div>
-          </div>
-          <%= image_tag("circus.png", class: "img-responsive") %>
-        </a>
-      </div>
-      
-      <div class="col-sm-4 portfolio-item">
-        <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-          <div class="caption">
-            <div class="caption-content">
-              <i class="fa fa-search-plus fa-3x"></i>
-            </div>
-          </div>
-        <%= image_tag("game.png", class: "img-responsive") %>
-                    </a>
-      </div>
-                
-      <div class="col-sm-4 portfolio-item">
-        <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-          <div class="caption">
-            <div class="caption-content">
-              <i class="fa fa-search-plus fa-3x"></i>
-            </div>
-          </div>
-          <%= image_tag("safe.png", class: "img-responsive") %>
-        </a>
-      </div>
-      
-      <div class="col-sm-4 portfolio-item">
-        <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-          <div class="caption">
-            <div class="caption-content">
-              <i class="fa fa-search-plus fa-3x"></i>
-            </div>
-          </div>
-          <%= image_tag("submarine.png", class: "img-responsive") %>
-        </a>
-      </div>
+            <%= image_tag("cabin.png", class: "img-responsive")%>
+          </a>
+        </div>
+      <% end %>
     </div>
   </div>
 </section>

@@ -4,13 +4,14 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul>
         <li class="page-scroll">
-        <%= link_to image_tag("logo.png", class: "img-responsive", size: "500x350"), "#categories" %>
-      </li>
+          <%= link_to image_tag("logo.png", class: "img-responsive", size: "500x350"), "#categories" %>
+        </li>
       </ul>
     </div>  
   <div class="container">
   </div>
 </header>
+
 <%= render('common/sections', categories: @categories) %>
 <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
 <div class="scroll-top page-scroll visible-xs visble-sm">
