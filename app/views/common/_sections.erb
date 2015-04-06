@@ -10,7 +10,7 @@
     <div class="row">
       <% @categories.each do |category|%>
         <div class="col-sm-6 portfolio-item">
-          <a href="<%="#category.name_as_folder"%>" class="portfolio-link" data-toggle="modal">
+          <a href="<%="##{category.name_as_folder}Modal"%>" class="portfolio-link" data-toggle="modal">
             <div class="caption">
               <div class="caption-content">
                 <i class="fa fa-search-plus fa-3x"></i>
