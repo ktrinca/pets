@@ -5,19 +5,21 @@
         <h3 class="panel-title">Datos de Adopción</h3>
       </div>
       <div class="row">
-        <div class="col-xs-4">
-          <%= image_tag 'dog2.jpg',  size: '78x78', class: 'img-responsive img-radio'%>
+        <div class="col-xs-2 col-md-offset-2">
+          <%= image_tag 'dog2.jpg',  size: '86x86', class: 'img-responsive img-radio'%>
             <button type="button" class="btn btn-primary btn-radio">Perros</button>
             <%= check_box_tag "post[pet]", 'perros', false, class: 'hidden' %>
         </div>
-        <div class="col-xs-4">
-          <%= image_tag 'cat2.jpg',  size: '100x100', class: 'img-responsive img-radio'%>
-            <button type="button" class="btn btn-primary btn-radio">Perros</button>
+        
+        <div class="col-xs-2">
+          <%= image_tag 'cat2.jpg',  size: '110x110', class: 'img-responsive img-radio'%>
+            <button type="button" class="btn btn-primary btn-radio">Gatos</button>
             <%= check_box_tag "post[pet]", 'gatos', false, class: 'hidden' %>
         </div>
-        <div class="col-xs-4">
-          <%= image_tag 'bird2.jpg',  size: '100x100', class: 'img-responsive img-radio'%>
-            <button type="button" class="btn btn-primary btn-radio">Perros</button>
+        
+        <div class="col-xs-2">
+          <%= image_tag 'bird2.jpg',  size: '110x110', class: 'img-responsive img-radio'%>
+            <button type="button" class="btn btn-primary btn-radio">Otros</button>
             <%= check_box_tag "post[pet]", 'otros', false, class: 'hidden' %>
         </div>
         
