@@ -16,6 +16,7 @@ class Post < ActiveRecord::Base
   
   # Instance methods
   def image
-    @image = self.post_images.exists? ? self.post_images.first.image.url : 'puppy.jpg'
+    @image = self.post_images.exists? ? 
+             self.post_images.first.image.url : 'puppy.jpg'
   end
 end

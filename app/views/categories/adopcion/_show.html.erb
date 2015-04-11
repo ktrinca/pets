@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-4">
-    <%= link_to category_posts_path(@category, :pet => :gatos), class: 'btn btn-primary btn-lg' do %>
-      <i class="fa fa-plus-square"></i> <span>Gatos</span>
+    <%= link_to category_posts_path(@category), class: 'btn btn-primary btn-lg' do %>
+      <i class="fa fa-plus-square"></i> <span>Adoptar</span>
     <% end %>  
   </div> 
   <div class="col-md-4"> 
@@ -9,8 +9,8 @@
   </div>
   
   <div class="col-md-4"> 
-    <%= link_to category_posts_path(@category, :pet => :otros), class: 'btn btn-primary btn-lg' do %>
-      <i class="fa fa-plus-square"></i> <span>Otros</span>
+    <%= link_to new_category_post_path(@category), class: 'btn btn-primary btn-lg' do %>
+      <i class="fa fa-plus-square"></i> <span>Dar en Adopción</span>
     <% end %>  
   </div>
 </div> 

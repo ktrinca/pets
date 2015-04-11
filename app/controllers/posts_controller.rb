@@ -4,12 +4,15 @@ class PostsController < BaseController
 
   def new
     @province_form_presenter = ProvinceFormPresenter.new(view_context)
+    @post_form_presenter = PostFormPresenter.new(view_context)
     @post = Post.new
     @post.build_contact
+
   end
 
   def create
-    @post = Post.new(post_params.merge(pet: params[:pet], category_id: params[:category_id]))
+    @post = Post.new(post_params.merge(category_id: params[:category_id]))
+    @post.build_contact
 
     if @post.save
       flash[:notice] = 'Publicacion Creada!'
@@ -17,7 +20,7 @@ class PostsController < BaseController
       @post = Post.new
     end
     
-    respond_with([@category, @post], pet: params[:pet])
+    respond_with([@category, @post])
   end
 
   def show
@@ -26,7 +29,7 @@ class PostsController < BaseController
 
   def index
     if params[:all] 
-      @posts = @category.posts.paginate :page => params[:page], :per_page => 2
+      @posts = @category.posts.paginate :page => params[:page]
     end  
   end
 
