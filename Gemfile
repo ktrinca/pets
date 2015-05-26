@@ -21,6 +21,12 @@ gem 'select2-rails', '~> 3.5.9.1'
 gem 'carrierwave', '~> 0.10.0'
 gem 'plupload-rails', '~> 1.2.1'
 gem 'action_parameter', '~> 0.0.3'
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-twitter', '~> 0.0.16'
+gem 'omniauth-facebook', '~> 1.2.0'
+gem 'omniauth-linkedin', '~> 0.0.6'
+
 
 
 
