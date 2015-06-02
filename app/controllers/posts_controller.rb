@@ -1,6 +1,7 @@
 class PostsController < BaseController
   before_filter :load_categories
   before_action :find_category
+  before_action :authenticate_user!, only: [:new, :create, :update, :destroy]
 
   def new
     @province_form_presenter = ProvinceFormPresenter.new(view_context)
