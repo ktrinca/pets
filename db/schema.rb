@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150528174422) do
+ActiveRecord::Schema.define(version: 20150622141735) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 20150528174422) do
   create_table "contacts", force: true do |t|
     t.string   "name"
     t.string   "last_name"
-    t.integer  "city_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "phone"
@@ -68,7 +67,7 @@ ActiveRecord::Schema.define(version: 20150528174422) do
     t.string   "title"
     t.text     "body"
     t.string   "address"
-    t.integer  "contact_id"
+    t.integer  "user_id"
     t.string   "image"
     t.integer  "category_id"
     t.datetime "created_at"
@@ -76,6 +75,8 @@ ActiveRecord::Schema.define(version: 20150528174422) do
     t.string   "image_1"
     t.string   "image_2"
     t.integer  "pet"
+    t.integer  "city_id"
+    t.integer  "contact_id"
   end
 
   create_table "provinces", force: true do |t|
@@ -101,6 +102,7 @@ ActiveRecord::Schema.define(version: 20150528174422) do
     t.string   "last_name"
     t.integer  "role"
     t.datetime "confirmed_at"
+    t.string   "phone"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

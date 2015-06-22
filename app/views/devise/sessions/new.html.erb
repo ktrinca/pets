@@ -14,33 +14,54 @@
     
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2">
-
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: 'form'}) do |f| %>
-           <div class="row control-group">
-                            <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Name</label>
-                                <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
-                                <p class="help-block text-danger"></p>
-                            </div>
-                        </div>
           <div class="row control-group">
+
             <div class="form-group col-xs-12 floating-label-form-group controls">
-              <%= f.input :email, required: false, autofocus: true, input_html: { class: 'form-control', placeholder: 'Direccion de Email'} %>
+              <label>Nombre</label>
+              <input type="text" class="form-control" placeholder="Nombre" id="name" required data-validation-required-message="Por favor ingrese su apellido." >
+              <p class="help-block text-danger"></p>
             </div>
           </div>
+
+          <div class="row control-group">
+            <div class="form-group col-xs-12 floating-label-form-group controls">
+              <%= f.input :last_name, required: true, autofocus: true, input_html: { class: 'form-control', placeholder: 'Apellido'} %>
+            </div>
+          </div>
+          
+          <div class="row control-group">
+            <div class="form-group col-xs-12 floating-label-form-group controls">
+              <%= f.input :email, required: true, autofocus: true, input_html: { class: 'form-control', placeholder: 'Direccion de Email'} %>
+            </div>
+          </div>
+          
           <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls">
               <%= f.input :password, required: true, input_html: { class: 'form-control', placeholder: '*****'} %>
             </div>
+          </div>
+          
+          <div class="row control-group">
+            <div class="form-group col-xs-12 controls">  
+              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+            </div>  
           </div>  
-            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          
+          <div id="success"></div>
           
 
-          <div class="form-actions">
-            <%= f.button :submit, "Ingresar" %>
+          <div class="row">
+            <div class="form-group">
+            </br>
+              <%= f.button :submit, "Ingresar", class: 'btn btn-success btn-block btn-lg' %>
+
+            </div> 
+            <%= render "devise/shared/links" %> 
           </div>
         <% end %>
-        <%= render "devise/shared/links" %>
+
+
       </div>
     </div>
   </div>  

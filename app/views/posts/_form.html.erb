@@ -6,19 +6,19 @@
       </div>
       <div class="row">
         <div class="col-xs-2 col-md-offset-1">
-          <%= image_tag 'dog2.jpg',  size: '86x86', class: 'img-responsive img-radio'%>
+          <%= image_tag 'dog2.jpg', size: '86x86', class: 'img-responsive img-radio'%>
             <button type="button" class="btn btn-primary btn-radio">Perros</button>
             <%= check_box_tag "post[pet]", 'perros', false, class: 'hidden' %>
         </div>
         
-        <div class="col-xs-1">
-          <%= image_tag 'cat2.jpg',  size: '110x110', class: 'img-responsive img-radio'%>
+        <div class="col-xs-2">
+          <%= image_tag 'cat2.jpg', class: 'img-responsive img-radio'%>
             <button type="button" class="btn btn-primary btn-radio">Gatos</button>
             <%= check_box_tag "post[pet]", 'gatos', false, class: 'hidden' %>
         </div>
         
-        <div class="col-xs-1">
-          <%= image_tag 'bird2.jpg',  size: '110x110', class: 'img-responsive img-radio'%>
+        <div class="col-xs-2">
+          <%= image_tag 'bird2.jpg', class: 'img-responsive img-radio'%>
             <button type="button" class="btn btn-primary btn-radio">Otros</button>
             <%= check_box_tag "post[pet]", 'otros', false, class: 'hidden' %>
         </div>
@@ -29,7 +29,8 @@
         <%= f.input :title, autofocus: true, input_html: { class: 'form-control' } %>
         <%= f.input :body, input_html: { class: 'form-control' } %>
         <%= f.input :address, input_html: { class: 'form-control' } if !@category.adoption%>
-        
+        <%= f.input  :city_id, collection: @province_form_presenter.provinces, 
+              as: :grouped_select, group_method: :cities, autofocus: true , input_html: { class: 'form-control select2' }%>
       </div>
     </div>
   </div>
@@ -44,8 +45,6 @@
           <%= contact_form.input :name, input_html: { class: 'form-control' } %>
           <%= contact_form.input :last_name, input_html: { class: 'form-control' } %>
           <%= contact_form.input :phone, input_html: { class: 'form-control' } %>
-          <%= contact_form.input :city_id, collection: @province_form_presenter.provinces, 
-              as: :grouped_select, group_method: :cities, autofocus: true , input_html: { class: 'form-control select2' }%>
         <% end %>
       </div>
     </div>

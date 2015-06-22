@@ -8,7 +8,7 @@
 @import "bootstrap-sprockets.scss";
 @import "bootstrap.min.css.scss";
 @import "font-awesome/css/font-awesome.min.css";
-
+@import "bootstrap-social.css";
 
 body {
     overflow-x: hidden;
@@ -270,6 +270,8 @@ section.success {
     transition: all .3s ease-in-out;
 }
 
+
+
 .btn-outline:hover,
 .btn-outline:focus,
 .btn-outline:active,
@@ -355,17 +357,6 @@ footer .footer-col {
 footer .footer-below {
     padding: 25px 0;
     background-color: #233140;
-}
-
-.btn-social {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    border: 2px solid #fff;
-    border-radius: 100%;
-    text-align: center;
-    font-size: 20px;
-    line-height: 45px;
 }
 
 .btn:focus,

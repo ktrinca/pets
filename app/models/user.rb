@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
-TEMP_EMAIL_PREFIX = 'change@me'
+  TEMP_EMAIL_PREFIX = 'change@me'
   TEMP_EMAIL_REGEX = /\Achange@me/
+
+  has_many :posts
 
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable
@@ -33,7 +35,8 @@ TEMP_EMAIL_PREFIX = 'change@me'
       # Create the user if it's a new registration
       if user.nil?
         user = User.new(
-          name: auth.extra.raw_info.name,
+          name: auth.extra.raw_info.first_name,
+          last_name: auth.extra.raw_info.last_name,
           #username: auth.info.nickname || auth.uid,
           email: email ? email : "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
           password: Devise.friendly_token[0,20]

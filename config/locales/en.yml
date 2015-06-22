@@ -21,3 +21,14 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    errors:
+      messages:
+        taken: "has already been taken"
+        record_invalid: "Validation failed: %{errors}"
+        models:
+            user:
+              blank: "This is a custom blank message for %{model}: %{attribute}"
+              attributes:
+                last_name:
+                  blank: "This is a custom blank message for first name"

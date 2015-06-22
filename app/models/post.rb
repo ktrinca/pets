@@ -3,6 +3,7 @@ class Post < ActiveRecord::Base
   enum pet: %w(perros gatos otros)
   
   belongs_to :category
+  belongs_to :user
   belongs_to :contact
   has_many   :comments
   has_many   :post_images, dependent: :destroy, counter_cache: true
