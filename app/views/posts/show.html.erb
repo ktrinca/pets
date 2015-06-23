@@ -1,20 +1,24 @@
+</br></br></br></br>
+<%= render('common/messages') %>
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-lg-12 text-center">
     <div class="page-header">
-      <h1>Detalle de la Publicación <%= @category.name %></h1>
+      <h1>Publicación <%= @category.name %></h1>
+      <hr class="star-primary">
     </div>
-    <%= render('common/messages') %>
   </div>
+</div>
+<div class="row" > 
   <div class="col-md-6 col-sm-12">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Post info</h3>
+        <h3 class="panel-title">Informacion de la Publicación</h3>
       </div>
       <div class="panel-body">
         <dl>
-          <dt>Name</dt>
-          <dd><%= @post.title %></dd>
-          <dt>Description</dt>
+          <dt><%= @post.title %></dt>
+          
+          <dt>Descripción</dt>
           <dd><%= @post.body %></dd>
         </dl>
       </div>

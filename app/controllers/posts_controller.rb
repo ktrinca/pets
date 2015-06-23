@@ -13,8 +13,7 @@ class PostsController < BaseController
 
   def create
     @post = Post.new(post_params.merge(category_id: params[:category_id], user_id: current_user.id))
-    @post.build_contact
-
+    
     if @post.save
       flash[:notice] = 'Publicacion Creada!'
     else
