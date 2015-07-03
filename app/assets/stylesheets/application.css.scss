@@ -4,3 +4,34 @@
  *= require select2-bootstrap
  *= require_self
  **/
+
+h2{
+    margin: 0;     
+    color: #666;
+    text-align: center;
+    padding-top: 2px;
+    font-size: 52px;
+    font-family: "trebuchet ms", sans-serif;    
+}
+
+.item{
+    background: #D7D7D7;    
+    text-align: center;
+    height: auto !important;
+}
+.carousel{
+    margin-top: 30px;
+}
+
+.bs-example{
+    margin: 5px;
+}
+
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+display: block;
+height: auto;
+max-width: 100%;
+line-height: 1;
+width: 100%;
+}
+
