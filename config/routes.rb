@@ -8,10 +8,11 @@ Rails.application.routes.draw do
 
   resources :categories do
     resources :posts do
+      resources :comments
       get :publications, on: :collection
       resources :post_images do
         patch 'sort', on: :collection
-      end 
+      end
     end
   end
 

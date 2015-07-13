@@ -71,6 +71,13 @@
 
 
 </div>
+<div class="well">
+ 
+<h4>Dejar Comentario</h4>
+  <%= simple_form_for [@category, @post, @comment], html: { role: 'form', class:"clearfix" } do |f| %>
+    <%= render('comments/form', f: f, js: false) %>
+  <% end %>
+    
 
 <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
   <div class="container-fluid clearfix">

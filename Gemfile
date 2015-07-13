@@ -26,6 +26,7 @@ gem 'omniauth'
 gem 'omniauth-twitter', '~> 0.0.16'
 gem 'omniauth-facebook', '~> 1.2.0'
 gem 'omniauth-linkedin', '~> 0.0.6'
+gem 'closure_tree',  '~> 5.2.0'
 
 
 
