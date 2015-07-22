@@ -1,6 +1,5 @@
 <div class="well">
-  <h2><%= comment.title %></h2>
-  <p class="text-muted">Comentado por <strong><%= comment.title %></strong> el
+  <p class="text-muted">Comentado por <strong><%= comment.user.full_name %></strong> el
     <%= l(comment.created_at, format: '%d %B %Y,  %H:%M:%S') %></p>
  
   <blockquote>
@@ -12,10 +11,13 @@
   </div>
 
   <% from_reply_form ||= nil %>
-<% unless from_reply_form %>
-  <% if comment.leaf? %>
-    <small class="text-muted">There are no replies yet - be the first one to reply!</small>
+    <% unless from_reply_form %>
+      <% if comment.leaf? %>
+        <small class="text-muted">Aun no tiene respuesta - Sé el primero en responder!</small>
+      <% end %>
+      
+      <p id="link_reply">
+      	<%= link_to 'Responder', category_post_new_comment_path(@category, @post, comment.id), class: 'pull-right', remote: true  %>
+      </p>
   <% end %>
-  <p><%= link_to 'Responder', category_post_new_comment_path(@category, @post, comment.id), class: 'pull-right', remote: true  %></p>
-<% end %>
 </div>

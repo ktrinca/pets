@@ -1,7 +1,7 @@
 
 <% if @comment.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+      <h2><%= pluralize(@comment.errors.count, "error") %> Prohivido este comentario se guarden:</h2>
  
       <ul>
         <% @comment.errors.full_messages.each do |msg| %>
@@ -10,11 +10,6 @@
       </ul>
     </div>
   <% end %>
- 
-  <div class="form-group">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control' %>
-  </div>
  
   <div class="form-group">
     <%= f.label :body %>

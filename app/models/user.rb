@@ -57,4 +57,9 @@ class User < ActiveRecord::Base
   def email_verified?
     self.email && self.email !~ TEMP_EMAIL_REGEX
   end
+
+  # Instance methods
+  def full_name
+    [name, last_name].join(' ')
+  end
 end
