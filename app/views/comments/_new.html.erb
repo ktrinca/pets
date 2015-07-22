@@ -1,0 +1,5 @@
+Respuesta:	
+<%= simple_form_for [@category, @post, @comment], html: { role: 'form', class:"clearfix" } do |f| %>
+  <%= f.hidden_field :parent_id, :value => params[:parent_id] %>
+  <%= render('comments/form', f: f, js: false) %>
+<% end %>

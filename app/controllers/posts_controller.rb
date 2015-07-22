@@ -25,6 +25,7 @@ class PostsController < BaseController
 
   def show
     @post = Post.find(params[:id])
+    @comments = Comment.hash_tree
     @comment = Comment.new
   end
 

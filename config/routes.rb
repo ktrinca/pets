@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :categories do
     resources :posts do
       resources :comments
+      get '/comments/new/(:parent_id)', to: 'comments#new', as: :new_comment
       get :publications, on: :collection
       resources :post_images do
         patch 'sort', on: :collection

@@ -71,30 +71,33 @@
 
 
 </div>
+<%= comments_tree_for @comments %>
+
 <div class="well">
- 
-<h4>Dejar Comentario</h4>
-  <%= simple_form_for [@category, @post, @comment], html: { role: 'form', class:"clearfix" } do |f| %>
-    <%= render('comments/form', f: f, js: false) %>
-  <% end %>
+  
+
+  <h4>Dejar Comentario</h4>
+    <%= simple_form_for [@category, @post, @comment], html: { role: 'form', class:"clearfix" } do |f| %>
+      <%= render('comments/form', f: f, js: false) %>
+    <% end %>
     
 
-<nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
-  <div class="container-fluid clearfix">
-    <%= link_to 'Back to listing', category_posts_path(@category, pet: params[:pet]), class: 'btn btn-default navbar-btn btn-sm pull-left' %>
-    <div class="btn-group pull-right">
+    <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+      <div class="container-fluid clearfix">
+        <%= link_to 'Back to listing', category_posts_path(@category, pet: params[:pet]), class: 'btn btn-default navbar-btn btn-sm pull-left' %>
+        <div class="btn-group pull-right">
       
-        <%= link_to category_post_post_images_path(@category, @post), class: 'btn btn-sm btn-default navbar-btn' do %>
-          <i class="fa fa-image"></i> <span class="hidden-xs">Images</span>
-        <% end %>
+          <%= link_to category_post_post_images_path(@category, @post), class: 'btn btn-sm btn-default navbar-btn' do %>
+            <i class="fa fa-image"></i> <span class="hidden-xs">Images</span>
+          <% end %>
       
-      
-        <%= link_to edit_category_post_path(@category, @post), class: 'btn btn-sm btn-default navbar-btn' do %>
-          <i class="fa fa-edit"></i> <span class="hidden-xs">Edit</span>
-        <% end %>
-      
-    </div>
+          <%= link_to edit_category_post_path(@category, @post), class: 'btn btn-sm btn-default navbar-btn' do %>
+            <i class="fa fa-edit"></i> <span class="hidden-xs">Edit</span>
+          <% end %>
+        </div>
+      </div>
+    </nav>
   </div>
-</nav>
-</div>
+
+ 
 </section>

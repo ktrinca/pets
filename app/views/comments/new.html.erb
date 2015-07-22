@@ -1,0 +1,4 @@
+
+<%= simple_form_for [@category, @post, @comment], html: { role: 'form', class:"clearfix" } do |f| %>
+  <%= render('comments/form', f: f, js: false) %>
+<% end %>

@@ -27,3 +27,9 @@ $ ->
     $(fieldset).find('.row .panel').each (j, box) ->
       max_height = $(box).height() if max_height < $(box).height()
     $(fieldset).find('.row .panel').height(max_height)
+
+ $('#yourButton').click (e)-> 
+   e.preventDefault()
+   $('#myFormsss').show()
+   alert('xxx');
+   
