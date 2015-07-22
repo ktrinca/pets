@@ -7,16 +7,15 @@
   </blockquote>
   
   <div id="reply<%=comment.id%>">
-  
   </div>
 
   <% from_reply_form ||= nil %>
     <% unless from_reply_form %>
       <% if comment.leaf? %>
-        <small class="text-muted">Aun no tiene respuesta - Sé el primero en responder!</small>
+        <small class="text-muted">Aun no tiene respuesta - Sé el primero en contestar!</small>
       <% end %>
       
-      <p id="link_reply">
+      <p id="link_reply<%=comment.id%>">
       	<%= link_to 'Responder', category_post_new_comment_path(@category, @post, comment.id), class: 'pull-right', remote: true  %>
       </p>
   <% end %>

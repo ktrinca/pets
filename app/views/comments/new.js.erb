@@ -1,2 +1,3 @@
 $('#reply<%=params[:parent_id]%>').append("<%= j render partial: 'comments/new'%>");
-alert("<%=params[:parent_id]%>");
+$('#link_reply<%=params[:parent_id]%>').hide();
+
