@@ -1,4 +1,4 @@
-<div class="well">
+<div class="well well-small">
   <p class="text-muted">Comentado por <strong><%= comment.user.full_name %></strong> el
     <%= l(comment.created_at, format: '%d %B %Y,  %H:%M:%S') %></p>
  
@@ -16,7 +16,7 @@
       <% end %>
       
       <p id="link_reply<%=comment.id%>">
-      	<%= link_to 'Responder', category_post_new_comment_path(@category, @post, comment.id), class: 'pull-right', remote: true  %>
+      	<%= link_to 'Responder', category_post_new_comment_path(@category, @post, comment.id), class: 'pull-right', remote: true  %> </br></br>
       </p>
   <% end %>
 </div>
