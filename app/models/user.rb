@@ -62,4 +62,8 @@ class User < ActiveRecord::Base
   def full_name
     [name, last_name].join(' ')
   end
+  
+  def is_owner?(user)
+    self == user
+  end  
 end

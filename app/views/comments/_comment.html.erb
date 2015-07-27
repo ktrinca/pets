@@ -15,8 +15,9 @@
         <small class="text-muted">Aun no tiene respuesta - Sé el primero en contestar!</small>
       <% end %>
       
-      <p id="link_reply<%=comment.id%>">
-      	<%= link_to 'Responder', category_post_new_comment_path(@category, @post, comment.id), class: 'pull-right', remote: true  %> </br></br>
-      </p>
+      <% if current_user && current_user.is_owner?(@post.user) %>
+        <p id="link_reply<%=comment.id%>">
+      	  <%= link_to 'Responder', category_post_new_comment_path(@category, @post, comment.id), class: 'pull-right', remote: true  %> </br></br>
+        </p>
+      <% end %>  
   <% end %>
-</div>
