@@ -1,5 +1,6 @@
 /**
  *= require freelancer
+ *= bootstrap-editable
  *= require select2
  *= require select2-bootstrap
  *= require_self
@@ -35,7 +36,8 @@ line-height: 1;
 width: 100%;
 }
 
-.replies {margin-left: 50px; 
-          margin-top:-2%;
-          }
+.replies {
+  margin-left: 50px; 
+  margin-top:-2%;
+}
 

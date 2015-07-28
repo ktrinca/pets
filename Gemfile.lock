@@ -45,6 +45,9 @@ GEM
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
       rack (>= 0.9.0)
+    bootstrap-editable-rails (0.0.9)
+      railties (>= 3.1)
+      sass-rails
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
     bootstrap-will_paginate (0.0.10)
@@ -250,6 +253,7 @@ PLATFORMS
 DEPENDENCIES
   action_parameter (~> 0.0.3)
   better_errors
+  bootstrap-editable-rails (~> 0.0.9)
   bootstrap-sass (~> 3.2.0)
   bootstrap-will_paginate (~> 0.0.10)
   carrierwave (~> 0.10.0)

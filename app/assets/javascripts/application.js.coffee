@@ -15,6 +15,9 @@
 #= require waypoints
 #= require pagination
 #= require checkbox
+#= require bootstrap-editable.min
+#= require bootstrap-editable-rails
+#= require post
 #
 
 $ ->

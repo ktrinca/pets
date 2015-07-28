@@ -6,7 +6,7 @@ class CommentsController < BaseController
     @post    = Post.find(params[:post_id])
     @category =  Category.find(params[:category_id])
   end
-
+  
   def create
     @post    = Post.find(params[:post_id])
     @category =  Category.find(params[:category_id])
@@ -24,6 +24,22 @@ class CommentsController < BaseController
     else
       render 'new'
     end
+  end
+
+  def edit
+    @comment = Comment.find(params[:id])
+  end
+
+  def update
+    @comment = Comment.find(params[:id])
+    respond_to do |format|
+
+      if @comment.update_attributes(body: params[:body])
+        
+        format.json { head :no_content }
+      else
+      end 
+    end 
   end
   
   private

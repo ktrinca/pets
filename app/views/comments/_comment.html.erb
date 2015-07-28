@@ -1,9 +1,13 @@
-<div class="well well-small">
+<div class="well">
   <p class="text-muted">Comentado por <strong><%= comment.user.full_name %></strong> el
     <%= l(comment.created_at, format: '%d %B %Y,  %H:%M:%S') %></p>
  
   <blockquote>
-    <p><%= comment.body %></p>
+    <span id="note<%=comment.id%>" data-name="body" data-toggle="#pencil<%=comment.id%>" data-original-title="Edite comentario" data-type="textarea" data-url="<%= category_post_comment_path(@category, @post, comment)%>">
+        <p><%= textarea_format(comment.body) %></p>
+      </span>
+      <a href="#" id="pencil<%=comment.id%>" style="float: right"><i class="glyphicon glyphicon-pencil"></i></a>
+                                        
   </blockquote>
   
   <div id="reply<%=comment.id%>">
@@ -21,3 +25,13 @@
         </p>
       <% end %>  
   <% end %>
+</div> 
+
+<script>
+        $("#note<%=comment.id%>").editable(); 
+          $("#pencil<%=comment.id%>").click(function(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            $("#note<%=comment.id%>").editable('toggle');
+          });   
+      </script> 
