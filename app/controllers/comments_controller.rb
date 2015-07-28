@@ -41,6 +41,16 @@ class CommentsController < BaseController
       end 
     end 
   end
+
+  def destroy
+    comment = Comment.find(params[:id])
+    @post    = Post.find(params[:post_id])
+    @category =  Category.find(params[:category_id])
+    
+    flash[:notice] = 'Item was deleted!' if comment.destroy
+
+    respond_with([@category, @post])
+  end
   
   private
 

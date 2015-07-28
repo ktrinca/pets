@@ -22,6 +22,10 @@
       <% if current_user && current_user.is_owner?(@post.user) %>
         <p id="link_reply<%=comment.id%>">
       	  <%= link_to 'Responder', category_post_new_comment_path(@category, @post, comment.id), class: 'pull-right', remote: true  %> </br></br>
+          
+          <%= link_to category_post_comment_path(@category, @post, comment.id), data: { confirm: 'Esta seguro?' }, method: :delete, class: 'btn btn-sm btn-danger' do %>
+            <i class="fa fa-trash-o"></i> <span class="hidden-xs">Delete</span>
+          <% end %>
         </p>
       <% end %>  
   <% end %>
