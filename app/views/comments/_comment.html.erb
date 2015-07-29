@@ -3,12 +3,17 @@
     <%= l(comment.created_at, format: '%d %B %Y,  %H:%M:%S') %></p>
  
   <blockquote>
-    <span id="note<%=comment.id%>" data-name="body" data-toggle="#pencil<%=comment.id%>" data-original-title="Edite comentario" data-type="textarea" data-url="<%= category_post_comment_path(@category, @post, comment)%>">
-        <p><%= textarea_format(comment.body) %></p>
+    <span id="note<%=comment.id%>" data-name="body" data-toggle="#pencil<%=comment.id%>" 
+      data-original-title="Edite comentario" data-type="textarea" data-url="<%= category_post_comment_path(@category, @post, comment)%>">
+      
+      <p><%= textarea_format(comment.body) %></p>
     </span>
     
-    <a href="#" id="pencil<%=comment.id%>" style="float: right"><i class="glyphicon glyphicon-pencil"></i></a>
-  
+    <% if !current_user.nil? && current_user.is_owner?(@post.user) %>
+        <a href="#" id="pencil<%=comment.id%>" style="float: right" title="Editar Comentario">
+          <i class="glyphicon glyphicon-pencil"></i>
+        </a>
+    <% end %>
                                         
   </blockquote>
   
@@ -23,13 +28,14 @@
       
       <% if current_user && current_user.is_owner?(@post.user) %>
         <p id="link_reply<%=comment.id%>">
-        
+          
       	  <%= link_to content_tag(:span, 'Responder'), category_post_new_comment_path(@category, @post, comment.id), 
               :class=>"label label-success pull-right", remote: true %>
           
-          <%= link_to content_tag(:span, 'Borrar'), category_post_comment_path(@category, @post, comment.id), 
+          <% if !current_user.nil? && current_user.is_owner?(@post.user) %>
+            <%= link_to content_tag(:span, 'Borrar'), category_post_comment_path(@category, @post, comment.id), 
               :class=>"label label-danger pull-right", data: { confirm: 'Esta seguro?' }, method: :delete %>
-        
+          <% end %>
         </p>
       <% end %>  
   <% end %>
