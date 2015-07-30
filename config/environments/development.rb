@@ -32,7 +32,7 @@ Rails.application.configure do
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
 
-  config.app_domain = 'faunarea.com'
+  config.app_domain = 'localhost:3000'
 
   # Email
   config.action_mailer.delivery_method = :smtp
