@@ -42,10 +42,10 @@ Rails.application.configure do
     address: 'smtp.gmail.com', 
     port: '587',
     enable_starttls_auto: true,
-    user_name: 'yraspo',
-    password: 'yanuni1980',
+    user_name: 'faunarea',
+    password: 'lkjasd164',
     authentication: :plain,
-    domain: 'somedomain.com'
+    domain: 'faunarea.com'
   }
 
   # Raises error for missing translations
