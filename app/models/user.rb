@@ -1,12 +1,9 @@
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
   TEMP_EMAIL_PREFIX = 'change@me'
   TEMP_EMAIL_REGEX = /\Achange@me/
 
-  has_many :posts
+  has_many :posts, :dependent => :destroy
+  has_many :comments, :dependent => :destroy
 
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable
@@ -45,7 +42,7 @@ class User < ActiveRecord::Base
           email: email ? email : "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
           password: Devise.friendly_token[0,20]
         )
-        #user.skip_confirmation! if user.respond_to?(:skip_confirmation)
+        user.skip_confirmation!
         user.save!
       end
     end
@@ -57,17 +54,19 @@ class User < ActiveRecord::Base
     end
     user
   end
-
+  
+   # Instance methods
   def email_verified?
     self.email && self.email !~ TEMP_EMAIL_REGEX
   end
 
-  # Instance methods
+ 
   def full_name
     [name, last_name].join(' ')
   end
-  
-  def is_owner?(user)
+
+   def is_owner? (user)
     self == user
   end  
+
 end
