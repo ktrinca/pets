@@ -6,19 +6,19 @@
       </div>
       <div class="row" style="text-align:center;">
         <div class="col-xs-2 col-md-offset-1">
-          <%= image_tag 'dog2.jpg', size: '115', class: 'img-responsive img-radio'%>
+          <%= image_tag 'dog-icon.png', class: 'img-responsive img-radio'%>
             <button type="button" class="btn btn-primary btn-radio">Perros</button>
             <%= check_box_tag "post[pet]", 'perros', false, class: 'hidden' %>
         </div>
         
         <div class="col-xs-2">
-          <%= image_tag 'cat2.jpg', class: 'img-responsive img-radio'%>
+          <%= image_tag 'cat-icon.png', class: 'img-responsive img-radio'%>
             <button type="button" class="btn btn-primary btn-radio">Gatos</button>
             <%= check_box_tag "post[pet]", 'gatos', false, class: 'hidden' %>
         </div>
         
         <div class="col-xs-2">
-          <%= image_tag 'bird2.jpg', class: 'img-responsive img-radio'%>
+          <%= image_tag 'turtle-icon.png', class: 'img-responsive img-radio'%>
             <button type="button" class="btn btn-primary btn-radio">Otros</button>
             <%= check_box_tag "post[pet]", 'otros', false, class: 'hidden' %>
         </div>

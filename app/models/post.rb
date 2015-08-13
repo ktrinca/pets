@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
   include PgSearch
   enum pet: %w(perros gatos otros)
+  enum status: %w(sin_adoptar adoptado)
   
   belongs_to :category
   belongs_to :user

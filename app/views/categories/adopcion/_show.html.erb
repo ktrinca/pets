@@ -1,22 +1,45 @@
+
 <div class="row">
-  <div class="col-md-4">
-    <%= link_to category_posts_path(@category), class: 'btn btn-primary btn-lg' do %>
-      <i class="fa fa-plus-square"></i> <span>Adoptar</span>
-    <% end %>  
-  </div> 
-  <div class="col-md-4"> 
-    <%= image_tag("cabin.png", class: "img-responsive")%>
+  <div class="col-sm-6 portfolio-item">
+    <div class="cuadro_intro_hover" style="background-color:#cccccc;">
+      <p style="text-align:center;">
+        <%= image_tag("adopcion.jpg", class: "img-responsive") %>
+      </p>
+      <div class="caption">
+        <div class="blur"></div>
+        <div class="caption-text">
+          <h3 style="border-top:1px solid white; border-bottom:2px solid white; padding:10px;">
+            Queres Adoptar?
+          </h3>
+          <p>20 adopciones publicadas</p>
+            <a class=" btn btn-success btn-lg" href="#">
+              <span class="glyphicon glyphicon-search"> Ir
+              </span>
+            </a>
+        </div>
+      </div>
+    </div>
+        
   </div>
-  
-  <div class="col-md-4"> 
-    <%= link_to new_category_post_path(@category), class: 'btn btn-primary btn-lg' do %>
-      <i class="fa fa-plus-square"></i> <span>Dar en Adopción</span>
-    <% end %>  
+
+  <div class="col-sm-6 portfolio-item">
+    <div class="cuadro_intro_hover" style="background-color:#cccccc;">
+      <p style="text-align:center;">
+        <%= image_tag("dar_adopcion.jpg", class: "img-responsive") %>
+      </p>
+      <div class="caption">
+        <div class="blur"></div>
+        <div class="caption-text">
+          <h3 style="border-top:1px solid white; border-bottom:2px solid white; padding:10px;">
+            Queres Publicar una Adopcion?
+          </h3>
+          <p>20 adopciones publicadas</p>
+            <%= link_to new_category_post_path(@category), class: " btn btn-success btn-lg" do %>
+              <span class="glyphicon glyphicon-search"> Ir
+              </span>
+            <%end%>
+        </div>
+      </div>
+    </div>
+        
   </div>
-</div> 
-
-
-
-
-
-  

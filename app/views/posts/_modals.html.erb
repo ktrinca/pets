@@ -17,14 +17,11 @@
               <h2>Adopción</h2>
               <hr class="star-primary">
             </div>
-             <ul>
+            
             <% @category = Category.find(1) %>
             <%= render("categories/#{category.name_as_folder}/show", 
               category: @category) %>
-          </ul>
-            
           </div>
-          
         </div>
       </div>
     </div>

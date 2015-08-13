@@ -12,7 +12,7 @@ class PostsController < BaseController
   end
 
   def create
-    @post = Post.new(post_params.merge(category_id: params[:category_id], user_id: current_user.id))
+    @post = Post.new(post_params.merge(category_id: params[:category_id], user_id: current_user.id, status: :sin_adoptar))
     
     if @post.save
       flash[:notice] = 'Publicacion Creada!'
