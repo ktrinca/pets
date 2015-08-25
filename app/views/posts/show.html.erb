@@ -1,78 +1,79 @@
 <section id="categories">
   <div class="container">
     
-<div class="row">
-  <div class="col-lg-12 text-center">
-    <div class="page-header">
-      <h1><%= @category.name %></h1>
-      <hr class="star-primary">
-    </div>
-  </div>
-</div>
-<div class="row" > 
-  <div class="col-md-6 col-sm-12">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title"><h3><%= @post.title %></h3></h3>
-      </div>
-      <div class="panel-body">
-        <div class="media-body" >
-          <div class="snippet">
-            <a class="pull-left text-success" href="venue.php">
-              <%= image_tag @post.image, size: '140', class: 'img-circle'%>
-            </a>
-            <p><%= @post.body %></p>      
-          </div>
-        </div>
-         <div class="panel-footer success">
-          <h3 class="panel-title"><b>Contacto:</b> <%="#{@post.contact.full_name} - Tel: #{@post.contact.phone}" %></h3>
-         </div>
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <div class="page-header">
+        <h1><%= @category.name %></h1>
+        <hr class="star-primary">
       </div>
     </div>
-    
   </div>
   
-  <div class="col-md-6 col-sm-12">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Fotos</h3>
-      </div>
-      <div class="panel-body">
-        <div class="bs-example">
-          <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
-           <!-- Carousel indicators -->
-            <ol class="carousel-indicators">
-              <% @post.post_images.each_with_index do |image, index| %>
-                <li data-target="#myCarousel" data-slide-to="<%= index %>" class="<%= index == 0 ? 'active' : ''%>"></li>
-              <%end%>
-            </ol>   
-          
-            <!-- Wrapper for carousel items -->
-            <div class="carousel-inner">
-              <% @post.post_images.each_with_index do |image, index|%>
-                <div class="item <%= index == 0 ? 'active' : ''%> ">
-                  <h2><%= image_tag image.image, class: ' img-responsive'%></h2>
-                </div>
-              <%end%>  
+  <div class="row" > 
+    <div class="col-md-6 col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><h3><%= @post.title %></h3></h3>
+        </div>
+        <div class="panel-body">
+          <div class="media-body" >
+            <div class="snippet">
+              <a class="pull-left text-success" href="venue.php">
+                <%= image_tag @post.image, size: '140', class: 'img-circle'%>
+              </a>
+              <p><%= @post.body %></p>      
             </div>
-            <!-- Carousel controls -->
-            <a class="carousel-control left" href="#myCarousel" data-slide="prev">
-              <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>
+          </div>
           
-            <a class="carousel-control right" href="#myCarousel" data-slide="next">
-              <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
+          <div class="panel-footer success">
+            <h3 class="panel-title"><b>Contacto:</b> <%="#{@post.contact.full_name} - Tel: #{@post.contact.phone}" %></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-6 col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Fotos</h3>
+        </div>
+        <div class="panel-body">
+          <div class="bs-example">
+            <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
+             <!-- Carousel indicators -->
+              <ol class="carousel-indicators">
+                <% @post.post_images.each_with_index do |image, index| %>
+                  <li data-target="#myCarousel" data-slide-to="<%= index %>" class="<%= index == 0 ? 'active' : ''%>"></li>
+                <%end%>
+              </ol>   
+          
+              <!-- Wrapper for carousel items -->
+              <div class="carousel-inner">
+                <% @post.post_images.each_with_index do |image, index|%>
+                  <div class="item <%= index == 0 ? 'active' : ''%> ">
+                    <h2><%= image_tag image.image, class: ' img-responsive'%></h2>
+                  </div>
+                <%end%>  
+              </div>
+              <!-- Carousel controls -->
+              <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+              </a>
+          
+              <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<%= comments_tree_for @comments if !@comments.nil?%>
+  <%= comments_tree_for @comments if !@comments.nil?%>
 
-<div class="well">
+  <div class="well">
   
 
   <h4>Dejar Comentario</h4>
