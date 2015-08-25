@@ -12,10 +12,11 @@
             Queres Adoptar?
           </h3>
           <p><%= @category.posts.count %> adopciones publicadas</p>
-            <a class=" btn btn-success btn-lg" href="#">
+            <%= link_to category_posts_path(@category), class: "btn btn-success btn-lg" do %>
+              
               <span class="glyphicon glyphicon-search"> Ir
               </span>
-            </a>
+            <% end %>
         </div>
       </div>
     </div>

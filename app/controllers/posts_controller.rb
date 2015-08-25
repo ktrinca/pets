@@ -30,9 +30,7 @@ class PostsController < BaseController
   end
 
   def index
-    if params[:all] 
-      @posts = @category.posts.paginate :page => params[:page]
-    end  
+    @posts = @category.posts.paginate :page => params[:page]
   end
 
  
