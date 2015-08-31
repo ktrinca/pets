@@ -1,19 +1,19 @@
 <section id="categories">
-  
-    <div class="content"> 
-      <div id="my-posts">
-        <div class="container">
-          <div class="row">
+  <div class="content"> 
+    <div id="my-posts">
+        
+          <div class="row well">
             <div class="col-lg-12 text-center">
               <h2>Listado</h2>
               <hr class="star-primary">
             </div>
           </div>
+          
           <%= render "posts/post" %>
-          <div id="infinite-scrolling">
+          <div id="infinite-scrolling" class="text-center">
             <%= will_paginate %>
           </div>
-        </div>
+        
       </div>  
       
     </div>  
