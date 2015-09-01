@@ -1,12 +1,10 @@
 <% @posts.each do |post| %>
   <div class="well container" style="width: 450px;">
-    <h3><%= link_to post.title, '#' %></h3>
-    <div class="snippet">
-      <%= link_to  class="pull-left text-success" href="venue.php" do>
-        <%= image_tag post.image, size: '140', class: 'img-circle'%>
-      <%end%>
-              
+    <h3 class="text-success"><%= post.title %></h3>
+    <div class="shrink">
+      <%= link_to image_tag(post.image, size: '140', class: 'img-circle'), category_post_path(@category, post), class: "pull-left text-success" %>
+      
+      <p><%= truncate(strip_tags(post.body), length: 600) %></p>
     </div>
-    <p><%= truncate(strip_tags(post.body), length: 600) %></p>
   </div>
 <%end%>

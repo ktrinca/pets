@@ -88,3 +88,25 @@ width: 100%;
 }
 
 .container-list{margin-right:auto;margin-left:auto;padding-left:15px;padding-right:15px}@media (min-width:768px){.container-list{width:750px}}@media (min-width:992px){.container-list{width:970px}}@media (min-width:1200px){.container-list{width:1170px}}
+
+.shrink img:hover{
+  width: 200px;
+  height: 200px;
+  opacity: 0.8;
+  cursor: pointer; cursor: hand; 
+}
+
+
+
+
+/*BLUR*/
+.blur img {
+  -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;
+}
+
+
+
