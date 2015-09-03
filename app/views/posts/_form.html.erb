@@ -6,21 +6,23 @@
       </div>
       <div class="row" style="text-align:center;">
         <div class="col-xs-2 col-md-offset-1">
-          <%= image_tag 'dog-icon.png', class: 'img-responsive img-radio'%>
+
+          <%= image_tag 'dog-icon.png', class: 'img-responsive img-radio', style: "opacity:#{@post.pet == 'perros' ? 1 : 0.5}" %>
             <button type="button" class="btn btn-primary btn-radio">Perros</button>
-            <%= check_box_tag "post[pet]", 'perros', false, class: 'hidden' %>
+
+            <%= check_box_tag "post[pet]", 'perros', {checked: @post.pet.nil? ? false : true}, class: 'hidden' %>
         </div>
         
         <div class="col-xs-2">
-          <%= image_tag 'cat-icon.png', class: 'img-responsive img-radio'%>
+          <%= image_tag 'cat-icon.png', class: 'img-responsive img-radio', style: "opacity: #{@post.pet == 'gatos' ? 1 : 0.5}"%>
             <button type="button" class="btn btn-primary btn-radio">Gatos</button>
-            <%= check_box_tag "post[pet]", 'gatos', false, class: 'hidden' %>
+            <%= check_box_tag "post[pet]", 'gatos', {checked: @post.pet.nil? ? false : true}, class: 'hidden' %>
         </div>
         
         <div class="col-xs-2">
-          <%= image_tag 'penguin-icon.png', class: 'img-responsive img-radio'%>
+          <%= image_tag 'penguin-icon.png', class: 'img-responsive img-radio', style: "opacity: #{@post.pet == 'otros' ? 1 : 0.5}"%>
             <button type="button" class="btn btn-primary btn-radio">Otros</button>
-            <%= check_box_tag "post[pet]", 'otros', false, class: 'hidden' %>
+            <%= check_box_tag "post[pet]", 'otros', {checked: @post.pet.nil? ? false : true}, class: 'hidden' %>
         </div>
         
       </div>
