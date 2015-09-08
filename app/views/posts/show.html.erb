@@ -84,18 +84,20 @@
 
     <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
       <div class="container-fluid clearfix">
-        <%= link_to 'Volver', category_posts_path(@category, pet: params[:pet]), class: 'btn btn-default navbar-btn btn-sm pull-left' %>
+        
         
         <div class="btn-group pull-right">
-          
           <% if current_user && current_user.is_owner?(@post.user) %>
-            <%= link_to category_post_post_images_path(@category, @post), class: 'btn btn-sm btn-default navbar-btn' do %>
-              <i class="fa fa-image"></i> <span class="hidden-xs">Imagenes</span>
+            <%= link_to category_post_post_images_path(@category, @post), class: 'btn btn-danger' do %>
+              <i class="fa fa-image"></i> <span class="hidden-xs">Agregar Fotos</span>
             <% end %>
       
-            <%= link_to edit_category_post_path(@category, @post), class: 'btn btn-sm btn-default navbar-btn' do %>
+            <%= link_to edit_category_post_path(@category, @post), class: 'btn btn-warning' do %>
               <i class="fa fa-edit"></i> <span class="hidden-xs">Edit</span>
             <% end %>
+          <% end %>
+          <%= link_to category_posts_path(@category, pet: params[:pet]), class: 'btn btn-default' do %>
+            <i class="fa fa-hand-o-left"></i> <span class="hidden-xs">Volver</span>
           <% end %>  
         
         </div>
@@ -108,3 +110,11 @@
 
  
 </section>
+
+
+<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+<div class="scroll-top page-scroll visible-xs visble-sm">
+  <a class="btn btn-primary" href="#page-top">
+    <i class="fa fa-chevron-up"></i>
+  </a>
+</div>
