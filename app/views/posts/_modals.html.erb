@@ -14,11 +14,11 @@
         <div class="row">
           <div class="col-md-12">
             <div class="modal-body">
-              <h2>Adopción</h2>
+              <h2><%=category.name_as_title%></h2>
               <hr class="star-primary">
             </div>
             
-            <% @category = Category.find(1) %>
+            <% @category = Category.find(category.id)  %>
             <%= render("categories/#{category.name_as_folder}/show", 
               category: @category) %>
           </div>
