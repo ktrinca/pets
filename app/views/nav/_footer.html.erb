@@ -1,6 +1,16 @@
-<a href="<%="##{@category.name_as_folder}Modal"%>" class="btn btn-warning btn-lg pull-right" data-toggle="modal">
-  <span class="glyphicon glyphicon-hand-left"> 
-    Volver
-  </span>
-</a>
+<div class="container-fluid">   
+  <div class="btn-group pull-right">
+    <%= link_to root_path, class: "btn btn-warning navbar-btn btn-lg" do%>
+      <span class="glyphicon glyphicon-home"> 
+        Inicio
+      </span>
+    <%end%>
+
+    <a href="<%="##{@category.name_as_folder}Modal"%>" class="btn btn-default navbar-btn btn-lg" data-toggle="modal">
+      <span class="glyphicon glyphicon-hand-left"> 
+        Volver
+      </span>
+    </a>
+  </div>
+</div>
 <%= render('posts/modals', categories: @categories) %>

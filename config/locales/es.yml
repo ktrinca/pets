@@ -20,7 +20,24 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 es:
-  hello: "Hello world"
+  simple_form:
+    labels:
+      defaults:
+        username: 'User name'
+        password: 'Password'
+        new:
+          name: 'Nombre'
+          last_name: 'Apellido'
+          phone: 'Telefono'
+          title: 'Titulo'
+          body: 'Descripcion'
+          city_id: 'Localidad'          
+  helpers:
+    submit:
+      # This will be the default ones, will take effect if no other
+      # are specifically defined for the models.
+      create: "Publicar"
+      update: "Actualizar Publicacion"
   activerecord:
     errors:
       messages:
