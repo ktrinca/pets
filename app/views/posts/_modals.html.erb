@@ -1,7 +1,6 @@
 <!-- CategoryModal Modals -->
 <% @categories.each do |category| %>
-  <div class="portfolio-modal modal fade" id="<%="#{category.name_as_folder}Modal"%>" 
-       tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="portfolio-modal modal fade" id="<%="#{category.name_as_folder}Modal"%>" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-content">
       <div class="close-modal" data-dismiss="modal">
         <div class="lr">
@@ -17,10 +16,9 @@
               <h2><%=category.name_as_title%></h2>
               <hr class="star-primary">
             </div>
-            
             <% @category = Category.find(category.id)  %>
             <%= render("categories/#{category.name_as_folder}/show", 
-              category: @category) %>
+              category: category) %>
           </div>
         </div>
       </div>

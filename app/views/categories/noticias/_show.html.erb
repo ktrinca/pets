@@ -1,32 +1,46 @@
+
 <div class="row">
-    <div class="col-xs-6 col-md-3">
-     <div class="thumbnail">	
-      <%= link_to category_posts_path(@category, :pet => :gatos), class: 'btn btn-primary btn-lg' do %>
-        <i class="fa fa-plus-square"></i> <span>Gatos</span>
-      <% end %>  
-     </div> 
-    </div> 
-     
-    <div class="col-xs-6 col-md-3"> 
-     <div class="thumbnail">
-      <%= link_to category_posts_path(@category, :pet => :perros), class: 'btn btn-primary btn-lg' do %>
-        <i class="fa fa-plus-square"></i> <span>Perros</span>
-      <% end %>  
-     </div> 
-    </div>
-
-    <div class="col-xs-6 col-md-3"> 
-     <div class="thumbnail">
-      <%= link_to category_posts_path(@category, :pet => :otros), class: 'btn btn-primary btn-lg' do %>
-        <i class="fa fa-plus-square"></i> <span>Otros</span>
-      <% end %>  
-    </div>
-
+  <div class="col-sm-6 portfolio-item">
+    <div class="cuadro_intro_hover" style="background-color:#cccccc;">
+      <p style="text-align:center;">
+        <%= image_tag("adopcion.jpg", class: "img-responsive") %>
+      </p>
+      <div class="caption">
+        <div class="blur"></div>
+        <div class="caption-text">
+          <h3 style="border-top:1px solid white; border-bottom:2px solid white; padding:10px;">
+            Ver Noticias
+          </h3>
+          <p><%= @category.posts.count %> noticias publicadas</p>
+            <%= link_to category_posts_path(@category), class: "btn btn-success btn-lg" do %>
+              
+              <span class="glyphicon glyphicon-search"> Ir
+              </span>
+            <% end %>
+        </div>
       </div>
-</div> 
+    </div>
+        
+  </div>
 
-
-
-
-
-  
+  <div class="col-sm-6 portfolio-item">
+    <div class="cuadro_intro_hover" style="background-color:#cccccc;">
+      <p style="text-align:center;">
+        <%= image_tag("dar_adopcion.jpg", class: "img-responsive") %>
+      </p>
+      <div class="caption">
+        <div class="blur"></div>
+        <div class="caption-text">
+          <h3 style="border-top:1px solid white; border-bottom:2px solid white; padding:10px;">
+            Queres Publicar una Adopcion?
+          </h3>
+            <%= link_to new_category_post_path(@category), class: "btn btn-success btn-lg" do %>
+              <span class="glyphicon glyphicon-hand-right"> Ir
+              </span>
+            <%end%>
+        </div>
+      </div>
+    </div>
+        
+  </div>
+</div>  

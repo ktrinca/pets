@@ -11,7 +11,7 @@
           <h3 style="border-top:1px solid white; border-bottom:2px solid white; padding:10px;">
             Queres Adoptar?
           </h3>
-          <p><%= @category.posts.count %> adopciones publicadas</p>
+          <p><hr class="star-primary"> <%= @category.posts.count %> adopciones publicadas</p>
             <%= link_to category_posts_path(@category), class: "btn btn-success btn-lg" do %>
               
               <span class="glyphicon glyphicon-search"> Ir
@@ -43,3 +43,4 @@
     </div>
         
   </div>
+</div>  
