@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col-md-6 col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Datos de Adopción</h3>
+      </div>
+      <div class="row" style="text-align:center;">
+        <div class="col-xs-2 col-md-offset-1">
+
+          <%= image_tag 'dog-icon.png', class: 'img-responsive img-radio', style: "opacity:#{@post.pet == 'perros' ? 1 : 0.5}" %>
+            <button type="button" class="btn btn-primary btn-radio">Perros</button>
+
+            <%= check_box_tag "post[pet]", 'perros', {checked: @post.pet.nil? ? false : true}, class: 'hidden' %>
+        </div>
+        
+        <div class="col-xs-2">
+          <%= image_tag 'cat-icon.png', class: 'img-responsive img-radio', style: "opacity: #{@post.pet == 'gatos' ? 1 : 0.5}"%>
+            <button type="button" class="btn btn-primary btn-radio">Gatos</button>
+            <%= check_box_tag "post[pet]", 'gatos', {checked: @post.pet.nil? ? false : true}, class: 'hidden' %>
+        </div>
+        
+        <div class="col-xs-2">
+          <%= image_tag 'penguin-icon.png', class: 'img-responsive img-radio', style: "opacity: #{@post.pet == 'otros' ? 1 : 0.5}"%>
+            <button type="button" class="btn btn-primary btn-radio">Otros</button>
+            <%= check_box_tag "post[pet]", 'otros', {checked: @post.pet.nil? ? false : true}, class: 'hidden' %>
+        </div>
+        
+      </div>
+      
+      <div class="panel-body">
+        <%= f.input :title, autofocus: true, input_html: { class: 'form-control' } %>
+        <%= f.input :body, input_html: { class: 'form-control' } %>
+        <%= f.input :address, input_html: { class: 'form-control' } if !@category.adoption%>
+        <%= f.input  :city_id, collection: @province_form_presenter.provinces, 
+              as: :grouped_select, group_method: :cities, autofocus: true , input_html: { class: 'form-control select2' }%>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Datos de Contacto</h3>
+      </div>
+
+      <div class="panel-body">
+        <%= f.simple_fields_for :contact do |contact_form| %>
+          <%= contact_form.input :name, input_html: { class: 'form-control' } %>
+          <%= contact_form.input :last_name, input_html: { class: 'form-control' } %>
+          <%= contact_form.input :phone, input_html: { class: 'form-control' } %>
+        <% end %>
+      </div>
+    </div>
+      
+  </div>
+</div> 
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+  <div class="container-fluid">
+    <%= link_to 'Cancel', category_posts_path, class: 'btn btn-default navbar-btn cancel pull-right' %>
+    <%= f.button :submit, class: 'btn btn-primary navbar-btn pull-right' %>
+  </div>
+</nav>

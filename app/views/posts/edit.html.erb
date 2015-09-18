@@ -7,7 +7,7 @@
         </div>
     
         <%= simple_form_for [@category, @post], html: { role: 'form' } do |f| %>
-          <%= render('form', f: f, js: false) %>
+          <%= render("/categories/#{@category.name_as_folder}/form", f: f, js: false) %>
         <% end %>
       </div>
     </div>    

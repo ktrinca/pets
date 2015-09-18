@@ -37,8 +37,19 @@ class PostsController < BaseController
     @province_form_presenter = ProvinceFormPresenter.new(view_context)
     @post_form_presenter = PostFormPresenter.new(view_context)
     @post = Post.find(params[:id])
-  end  
- 
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      flash[:notice] = 'Publicacion Actualizada!'
+    else
+      @post = Post.new
+    end
+    
+    respond_with([@category, @post])
+  end
+
   private
 
   def post_params
