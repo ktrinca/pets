@@ -28,7 +28,7 @@ gem 'omniauth-facebook', '~> 1.2.0'
 gem 'omniauth-linkedin', '~> 0.0.6'
 gem 'closure_tree',  '~> 5.2.0'
 gem 'bootstrap-editable-rails', '~>  0.0.9'
-
+gem 'searchlight', '~> 3.1.0'
 
 
 

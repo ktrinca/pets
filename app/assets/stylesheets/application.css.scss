@@ -108,5 +108,15 @@ width: 100%;
           transition: all 1s ease;
 }
 
+.search {
+    background: asset-url("bg-search-form2.gif", image);
+    background-position:center;
+    background-repeat:no-repeat;
+    width:540px;
+    height:75px;
+    margin:0 auto;
+    margin-top:100px;
+    margin-bottom:80px;
+}
 
 

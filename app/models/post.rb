@@ -16,6 +16,7 @@ class Post < ActiveRecord::Base
   
   
   scope :last_news, -> {where(category_id: 3).order(created_at: :desc) }
+  scope :sorted, -> { order(created_at: :desc) }
   
   self.per_page = 2
   
