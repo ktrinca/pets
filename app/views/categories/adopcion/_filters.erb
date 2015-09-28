@@ -1,18 +1,18 @@
 <div class="search">
-  <%= simple_form_for @contract_search, url: contracts_path, html: { role: 'form', method: :get, class: 'form-inline clearfix' } do |f| %>
+  <%= simple_form_for @post_search, url: category_posts_path(@category), html: { role: 'form', method: :get, class: 'form-inline clearfix' } do |f| %>
   <div class="pull-left">
-    <%= f.input :look_for, placeholder: 'Look for...', input_html: { class: 'form-control' }, label_html: { class: 'sr-only' } %>
-    <%= f.input :status, collection: @contract_form_presenter.filter_statuses, include_blank: 'Select Status', input_html: { class: 'form-control select2' }, label_html: { class: 'sr-only' } %>
-    <%= f.input :contract_reason_id, collection: @contract_form_presenter.contract_reasons, include_blank: 'Select Reason', label_method: 'name', input_html: { class: 'form-control select2' }, label_html: { class: 'sr-only' } %>
+    <%= f.input :look_for, placeholder: 'Buscar...', input_html: { class: 'form-control' }, label_html: { class: 'sr-only' } %>
+    <%= f.input :pet, collection: @post_form_presenter.pets, include_blank: 'todos', input_html: { class: 'form-control'}, required: false, label_html: { class: 'sr-only' },:multiple => true, :selected => ['1'] %>
+    
+
+   
     <%= button_tag class: 'btn btn-primary', name: nil do %>
-      <i class="fa fa-filter"></i> <span class="hidden-xs">Filter</span>
+      <i class="fa fa-filter"></i> <span class="hidden-xs">Buscar</span>
     <% end %>
-    <%= link_to contracts_path, class: 'btn btn-default' do %>
-      <i class="fa fa-ban"></i> <span class="hidden-xs">Clean</span>
+    <%= link_to category_posts_path(@category), class: 'btn btn-default' do %>
+      <i class="fa fa-ban"></i> <span class="hidden-xs">Borrar</span>
     <% end %>
   </div>
-  <div class="pull-right">
-    <%= f.input :sort_by, collection: @contract_form_presenter.sort_by_options, include_blank: 'Sort by', input_html: { class: 'form-control select2' }, label_html: { class: 'sr-only' } %>
-  </div>
+  
 <% end %>
 </div>

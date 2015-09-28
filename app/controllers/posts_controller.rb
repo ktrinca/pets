@@ -24,13 +24,15 @@ class PostsController < BaseController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post     = Post.find(params[:id])
     @comments = Comment.by_post(params[:id]).hash_tree
-    @comment = Comment.new
+    @comment  = Comment.new
   end
 
   def index
-    @posts = @category.posts.paginate :page => params[:page]
+    @post_form_presenter = PostFormPresenter.new(view_context)
+    @post_search = PostSearch.new(post_search_params[:post_search])
+    @posts = @post_search.results.page(params[:page])
   end
 
   def edit
@@ -62,6 +64,10 @@ class PostsController < BaseController
 
   def find_category
     @category = Category.find(params[:category_id])
+  end
+
+  def post_search_params
+    params.permit(post_search: [:look_for, :pet, :utf_8, :category_id])
   end
     
 end

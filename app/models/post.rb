@@ -17,7 +17,13 @@ class Post < ActiveRecord::Base
   
   scope :last_news, -> {where(category_id: 3).order(created_at: :desc) }
   scope :sorted, -> { order(created_at: :desc) }
-  
+
+  pg_search_scope :look_for,
+    against: %w(title body),
+    using: {
+      tsearch: {
+        prefix: true } }
+
   self.per_page = 2
   
   # Instance methods
