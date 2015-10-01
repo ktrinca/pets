@@ -31,7 +31,7 @@ class PostsController < BaseController
   def index
     @post_form_presenter = PostFormPresenter.new(view_context)
     @post_search = PostSearch.new(post_search_params[:post_search])
-    @posts = @post_search.results.where(category_id: params[:category_id]).page(params[:page]).per_page(2)
+    @posts = @post_search.results.where(category_id: params[:category_id]).page(params[:page])
   end
 
   def edit
