@@ -19,7 +19,7 @@ class Post < ActiveRecord::Base
   scope :sorted, -> { order(created_at: :desc) }
 
   pg_search_scope :look_for,
-    against: %w(title body),
+    against: %w(title body category_id),
     using: {
       tsearch: {
         prefix: true } }

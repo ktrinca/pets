@@ -1,10 +1,12 @@
 class PostSearch < Searchlight::Search
   search_on Post.sorted
 
-  searches :look_for, :pet
+  searches :look_for, :pet, :category_id
 
   def initialize(options = {})
+    self.category_id = category_id
     super
+    
   end
 
   def search_look_for
@@ -15,4 +17,5 @@ class PostSearch < Searchlight::Search
     search.send(pet.to_sym)
   end
 
+  
 end

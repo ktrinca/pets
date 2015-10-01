@@ -8,7 +8,6 @@ class PostsController < BaseController
     @post_form_presenter = PostFormPresenter.new(view_context)
     @post = Post.new
     @post.build_contact
-    
   end
 
   def create
@@ -24,7 +23,7 @@ class PostsController < BaseController
   end
 
   def show
-    @post     = Post.find(params[:id])
+    @post     = Post.find_by_id_and_category_id(params[:id], params[:category_id])
     @comments = Comment.by_post(params[:id]).hash_tree
     @comment  = Comment.new
   end
@@ -32,7 +31,7 @@ class PostsController < BaseController
   def index
     @post_form_presenter = PostFormPresenter.new(view_context)
     @post_search = PostSearch.new(post_search_params[:post_search])
-    @posts = @post_search.results.page(params[:page])
+    @posts = @post_search.results.where(category_id: params[:category_id]).page(params[:page]).per_page(2)
   end
 
   def edit
@@ -67,7 +66,7 @@ class PostsController < BaseController
   end
 
   def post_search_params
-    params.permit(post_search: [:look_for, :pet, :utf_8, :category_id])
+    params.permit(:category_id, post_search: [:look_for, :pet]).merge(category_id: params[:category_id])
   end
     
 end
