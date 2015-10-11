@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="page-header">
-          <h1>Nueva Publicación de Adopción</h1>
+          <h1>Nueva Publicación de <%="#{@category.name}"%></h1>
         </div>
     
         <%= simple_form_for [@category, @post], html: { role: 'form' } do |f| %>

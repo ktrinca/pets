@@ -1,0 +1,17 @@
+<div class="search">
+  <%= simple_form_for @post_search, url: category_posts_path(@category), html: { role: 'form', method: :get, class: 'form-inline' } do |f| %>
+    
+    <div class="form-group">
+      <%= f.input :look_for, placeholder: 'Buscar...', input_html: { class: 'form-control' }, label_html: { class: 'sr-only' } %>
+    </div>
+  
+    <%= button_tag class: 'btn btn-warning', name: nil do %>
+      <i class="fa fa-search"></i> <span class="hidden-xs">Buscar</span>
+    <% end %>
+    <%= link_to category_posts_path(@category), class: 'btn btn-default' do %>
+      <i class="fa fa-ban"></i> <span class="hidden-xs">Borrar</span>
+    <% end %>
+  </div>
+  
+<% end %>
+</div>

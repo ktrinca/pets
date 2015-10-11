@@ -11,7 +11,7 @@ class PostsController < BaseController
   end
 
   def create
-    @post = Post.new(post_params.merge(category_id: params[:category_id], user_id: current_user.id, status: :en_adopcion))
+    @post = Post.new(post_params.merge(category_id: params[:category_id], user_id: current_user.id, status: status_post))
     
     if @post.save
       flash[:notice] = 'Publicacion Creada!'
@@ -42,7 +42,7 @@ class PostsController < BaseController
 
   def update
     @post = Post.find(params[:id])
-    if @post.update(post_params)
+    if @post.update(post_params.merge(status: params[:post][:status]))
       flash[:notice] = 'Publicacion Actualizada!'
     else
       @post = Post.new
@@ -68,5 +68,8 @@ class PostsController < BaseController
   def post_search_params
     params.permit(:category_id, post_search: [:look_for, :pet]).merge(category_id: params[:category_id])
   end
-    
+  
+  def status_post
+    @category.adoption ? :en_adopcion : nil
+  end  
 end

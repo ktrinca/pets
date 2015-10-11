@@ -1,20 +1,20 @@
-<section id="categories">
+<section class ="success" id="categories">
   <div class="content"> 
     <div id="my-posts"></br>
       <div class="row">
         <div class="col-md-12 text-center">  
           <div class="col-lg-12 text-center">
             <h2>Listado de <%=@category.name%></h2>
-            <hr class="star-primary">
+            <hr class="star-light">
           </div>
           
           <%= render("/categories/#{@category.name_as_folder}/filters") %>
-          <section class="success" id="index">  
+          
             <%= render "posts/posts" %>
             <div id="infinite-scrolling" class="text-center">
               <%= will_paginate %>
             </div>
-          </section>  
+          
         
         </div>  
       </div>  

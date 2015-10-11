@@ -1,19 +1,16 @@
 <% @posts.each_with_index do |post, index|%>
-    <% if index%2 == 0 %> <div class='row'> <div class="col-lg-4 col-lg-offset-2"><% end %>
-    <% if index%2 != 0 %>  <div class="col-lg-4"> <% end %>
+    <% if index%2 == 0 %> <div class='row'> <div class="col-lg-3 col-lg-offset-3"><% end %>
+    <% if index%2 != 0 %>  <div class="col-lg-3"> <% end %>
       <div class="content-post">
-        <h3 class="text-success"><%= post.title %></h3>
+        <h3 class="text-default"><%= post.title %></h3>
           <div class="shrink">
-            
             <%= link_to image_tag(post.image, size: '140', class: 'img-circle'), 
                 category_post_path(@category, post), class: "pull-left text-success" %>
-            
-            <p><%= truncate(strip_tags(post.body), length: 600) %></p>
+            <p><%= truncate(strip_tags(post.body), length: 300) %></p>
           
           </div>
       </div>
   
       </div>  
-    <% if index%2 != 0 %> </div> <% end %>
+    <% if index%2 != 0 %> </br></div> <% end %>
 <% end %>
-

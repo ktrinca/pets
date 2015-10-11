@@ -2,31 +2,8 @@
   <div class="col-md-6 col-xs-12">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Datos de Adopción</h3>
+        <h3 class="panel-title">Datos de Publicación</h3>
       </div>
-      <div class="row" style="text-align:center;">
-        <div class="col-xs-2 col-md-offset-1">
-
-          <%= image_tag 'dog-icon.png', class: 'img-responsive img-radio', style: "opacity:#{@post.pet == 'perros' ? 1 : 0.5}" %>
-            <button type="button" class="btn btn-primary btn-radio">Perros</button>
-
-            <%= check_box_tag "post[pet]", 'perros', {checked: @post.pet.nil? ? false : true}, class: 'hidden' %>
-        </div>
-        
-        <div class="col-xs-2">
-          <%= image_tag 'cat-icon.png', class: 'img-responsive img-radio', style: "opacity: #{@post.pet == 'gatos' ? 1 : 0.5}"%>
-            <button type="button" class="btn btn-primary btn-radio">Gatos</button>
-            <%= check_box_tag "post[pet]", 'gatos', {checked: @post.pet.nil? ? false : true}, class: 'hidden' %>
-        </div>
-        
-        <div class="col-xs-2">
-          <%= image_tag 'penguin-icon.png', class: 'img-responsive img-radio', style: "opacity: #{@post.pet == 'otros' ? 1 : 0.5}"%>
-            <button type="button" class="btn btn-primary btn-radio">Otros</button>
-            <%= check_box_tag "post[pet]", 'otros', {checked: @post.pet.nil? ? false : true}, class: 'hidden' %>
-        </div>
-        
-      </div>
-      
       <div class="panel-body">
         <%= f.input :title, autofocus: true, input_html: { class: 'form-control' } %>
         <%= f.input :body, input_html: { class: 'form-control' } %>
