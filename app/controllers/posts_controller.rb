@@ -30,8 +30,9 @@ class PostsController < BaseController
 
   def index
     @post_form_presenter = PostFormPresenter.new(view_context)
-    @post_search = PostSearch.new(post_search_params[:post_search])
-    @posts = @post_search.results.where(category_id: params[:category_id]).page(params[:page])
+    @params = post_search_params[:post_search]
+    @post_search = PostSearch.new( (params[:post_search] || {}).merge(is_adoption: true))
+    @posts = @post_search.results.where(category_id: params[:category_id]).page(params[:page] )
   end
 
   def edit
@@ -66,7 +67,8 @@ class PostsController < BaseController
   end
 
   def post_search_params
-    params.permit(:category_id, post_search: [:look_for, :pet]).merge(category_id: params[:category_id])
+    params.permit(:category_id, post_search: [:look_for, :pet])
+    
   end
   
   def status_post
