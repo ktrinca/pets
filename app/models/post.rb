@@ -18,6 +18,7 @@ class Post < ActiveRecord::Base
   scope :last_news, -> {where(category_id: 3).order(created_at: :desc) }
   scope :sorted, -> { order(created_at: :desc) }
   scope :for_adoption, -> { where(status: 0) }
+  scope :already_adopted, -> { where(status: 1) }
 
   pg_search_scope :look_for,
     against: %w(title body category_id),

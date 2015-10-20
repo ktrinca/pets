@@ -18,7 +18,8 @@ class PostSearch < Searchlight::Search
 
   def search_is_adoption
     case is_adoption.to_s
-    when 'true'   then search.where(status: 0)
+    when 'true' then search.where(status: 0)
+    when 'false' then search search.where(status: 1)
     when 'either' then search # unmodified
     end
   end

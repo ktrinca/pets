@@ -30,8 +30,7 @@ class PostsController < BaseController
 
   def index
     @post_form_presenter = PostFormPresenter.new(view_context)
-    @params = post_search_params[:post_search]
-    @post_search = PostSearch.new( (params[:post_search] || {}).merge(is_adoption: true))
+    @post_search = PostSearch.new((post_search_params[:post_search] || {}).merge(is_adoption: status_params))
     @posts = @post_search.results.where(category_id: params[:category_id]).page(params[:page] )
   end
 
@@ -73,5 +72,15 @@ class PostsController < BaseController
   
   def status_post
     @category.adoption ? :en_adopcion : nil
+  end
+
+  def status_params
+    if @category.name == 'Adopción' && params[:status].nil?
+      true
+    elsif @category.name == 'Adopción' && !params[:status].nil?
+      false
+    else
+      "either"
+    end      
   end  
 end

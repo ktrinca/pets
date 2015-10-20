@@ -7,7 +7,6 @@
             <h2>Listado de <%=@category.name%></h2>
             <hr class="star-light">
           </div>
-
             <%= render("/categories/#{@category.name_as_folder}/filters") %>
           
             <%= render "posts/posts" %>
