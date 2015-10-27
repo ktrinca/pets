@@ -8,13 +8,10 @@
             <hr class="star-light">
           </div>
             <%= render("/categories/#{@category.name_as_folder}/filters") %>
-          
             <%= render "posts/posts" %>
             <div id="infinite-scrolling" class="text-center">
               <%= will_paginate %>
             </div>
-          
-        
         </div>  
       </div>  
     </div>  

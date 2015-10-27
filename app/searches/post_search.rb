@@ -5,7 +5,7 @@ class PostSearch < Searchlight::Search
 
   def initialize(options = {})
     super
-    self.is_adoption = :either if is_adoption.blank?
+    #self.is_adoption = :either if is_adoption.blank?
   end
 
   def search_look_for
@@ -19,7 +19,7 @@ class PostSearch < Searchlight::Search
   def search_is_adoption
     case is_adoption.to_s
     when 'true' then search.where(status: 0)
-    when 'false' then search search.where(status: 1)
+    when 'false' then search.where(status: 1)
     when 'either' then search # unmodified
     end
   end

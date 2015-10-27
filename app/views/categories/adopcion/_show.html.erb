@@ -12,7 +12,7 @@
             Queres Adoptar?
           </h3>
           <p><hr class="star-primary"> <%= Post.for_adoption.count %> adopciones publicadas</p>
-            <%= link_to category_posts_path(@category), class: "btn btn-success btn-lg" do %>
+            <%= link_to category_posts_path(@category, status: true), class: "btn btn-success btn-lg" do %>
               
               <span class="glyphicon glyphicon-search"> Ir
               </span>
@@ -20,7 +20,7 @@
         </div>
       </div>
     </div>
-        
+
   </div>
 
   <div class="col-sm-4 portfolio-item">
@@ -41,7 +41,6 @@
         </div>
       </div>
     </div>
-        
   </div>
 
   <div class="col-sm-4 portfolio-item">
@@ -56,7 +55,7 @@
             Adoptados!!!
           </h3>
           <p><hr class="star-primary"> <%= Post.already_adopted.count %> Adoptados</p>
-            <%= link_to category_posts_path(@category, status: true), class: "btn btn-success btn-lg" do %>
+            <%= link_to category_posts_path(@category, status: false), class: "btn btn-success btn-lg" do %>
               <span class="glyphicon glyphicon-search"> Ir
               </span>
             <% end %>
