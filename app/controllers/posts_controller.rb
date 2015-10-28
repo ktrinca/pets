@@ -11,7 +11,8 @@ class PostsController < BaseController
   end
 
   def create
-    @post = Post.new(post_params.merge(category_id: params[:category_id], user_id: current_user.id, status: status_post))
+    @post = Post.new(post_params.merge(category_id: params[:category_id], 
+                     user_id: current_user.id, status: status_post))
     
     if @post.save
       flash[:notice] = 'Publicacion Creada!'
@@ -75,9 +76,9 @@ class PostsController < BaseController
   end
 
   def status_params
-    if @category.name == 'Adopción' && params[:status] 
+    if @category.name == 'Adopción' && params[:status] == 'true'
       true
-    elsif @category.name == 'Adopción' && !params[:status]
+    elsif @category.name == 'Adopción' && params[:status] == 'false'
       false
     else
       'either'
