@@ -3,7 +3,10 @@
     <% if index%2 != 0 %>  <div class="col-lg-3"> <% end %>
       <div class="content-post">
         <div class="title">
-          <h3 class="text-default"><%= post.title %></h3>
+          <h4 class="text-default">
+            <span><%= post.title %>  <%= (image_tag @category.image_icon, class: 'icon-list pull-right') if !@category.image_icon.nil? %></span>
+          </h4>
+          
         </div>  
         <div class="shrink">
           <%= link_to image_tag(post.image, size: '120', class: 'img-circle'), 
