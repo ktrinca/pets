@@ -47,7 +47,7 @@ class CommentsController < BaseController
     @post    = Post.find(params[:post_id])
     @category =  Category.find(params[:category_id])
     
-    flash[:notice] = 'Item was deleted!' if comment.destroy
+    flash[:notice] = 'El comentario fue eliminado!' if comment.destroy
 
     respond_with([@category, @post])
   end

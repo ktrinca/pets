@@ -31,7 +31,10 @@ es:
           phone: 'Telefono'
           title: 'Titulo'
           body: 'Descripcion'
-          city_id: 'Localidad'          
+          city_id: 'Localidad'
+          address: Dirección
+          status: Condición
+
   helpers:
     submit:
       # This will be the default ones, will take effect if no other

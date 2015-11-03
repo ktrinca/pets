@@ -42,6 +42,16 @@ class PostsController < BaseController
     @post = Post.find(params[:id])
   end
 
+  def destroy
+    @comments = Comment.by_post(params[:id])
+    @post     = Post.find(params[:id])
+    status    = @post.status 
+    @comments.destroy_all if !@comments.nil?
+    flash[:notice] = 'La Pubicación fue eliminada!' if @post.destroy
+    respond_with(@category, location: category_posts_url(status: status))
+  end  
+  
+
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params.merge(status: params[:post][:status]))
@@ -76,9 +86,9 @@ class PostsController < BaseController
   end
 
   def status_params
-    if @category.name == 'Adopción' && params[:status] == 'true'
+    if @category.name == 'Adopción' && params[:status] == 'en_adopcion'
       true
-    elsif @category.name == 'Adopción' && params[:status] == 'false'
+    elsif @category.name == 'Adopción' && params[:status] == 'adoptado'
       false
     else
       'either'
