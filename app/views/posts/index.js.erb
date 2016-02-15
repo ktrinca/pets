@@ -1,7 +1,13 @@
 $('#my-posts').append('<%= j render "posts" %>');
 <% if @posts.next_page %>
-  $('.pagination').replaceWith('<%= j will_paginate @posts %>');
+  alert('x');
+
+  $('.pagination').css('margin-left', '300px');
+  $('.infinite-scrolling').replaceWith('<%= j will_paginate @posts %>');
+  $('.pagination').remove();
 <% else %>
+  alert('x2');
+   $('.infinite-scrolling').addClass('submitted');
   $(window).off('scroll');
   $('.pagination').remove();
 <% end %>

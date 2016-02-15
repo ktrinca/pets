@@ -19,6 +19,8 @@ h2{
     background: #D7D7D7;    
     text-align: center;
     height: 400px !important;
+    width: 400px;
+    border: 3px solid #000;
 }
 .carousel{
     margin-top: 30px;
@@ -47,6 +49,7 @@ width: 100%;
         overflow: hidden;
         height: 350px;
     }
+
 .cuadro_intro_hover:hover .caption{
   opacity: 2;
   transform: translateY(-150px);
@@ -87,7 +90,9 @@ width: 100%;
   width: 100%;
 }
 
-.container-list{margin-right:auto;margin-left:auto;padding-left:15px;padding-right:15px}@media (min-width:768px){.container-list{width:750px}}@media (min-width:992px){.container-list{width:970px}}@media (min-width:1200px){.container-list{width:1170px}}
+.container-list{
+margin-right:auto;
+margin-left:auto;padding-left:15px;padding-right:15px}@media (min-width:768px){.container-list{width:750px}}@media (min-width:992px){.container-list{width:970px}}@media (min-width:1200px){.container-list{width:1170px}}
 
 .shrink img:hover{
   width: 140px;
@@ -146,3 +151,9 @@ width: 100%;
   display: block;
   
 }  
+
+.submitted
+{
+  border: 1px #F00 solid;
+  margin: 200px;
+}

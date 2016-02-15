@@ -5,6 +5,11 @@ class Category < ActiveRecord::Base
     self.name == "Adopción"
   end
   
+  def losts
+    self.name == "Perdidos"
+  end
+  
+
   def name_as_title
    self.name.capitalize
   end

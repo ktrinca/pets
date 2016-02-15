@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
   include PgSearch
   enum pet: %w(perros gatos otros)
-  enum status: %w(en_adopcion adoptado)
+  enum status: %w(en_adopcion adoptado perdido reencuentro)
   
   belongs_to :category
   belongs_to :user
@@ -33,5 +33,6 @@ class Post < ActiveRecord::Base
     @image = self.post_images.exists? ? 
              self.post_images.first.image.url : 'puppy.jpg'
   end
+
   
 end
