@@ -15,7 +15,7 @@ class PostImagesController < BaseController
     @post_image = @post.post_images.build
     @post_image.image = params[:file]  
     @post_image.save
-    render partial: 'post_images/post_image', layout: false, locals: { post_image: @post_image }
+    render partial: 'post_images/post_image_row', layout: false, locals: { post_image: @post_image }
   end
 
   def sort
@@ -26,6 +26,12 @@ class PostImagesController < BaseController
 
     render nothing: true
   end	
+
+  def destroy
+    @post_image = PostImage.find(params[:id])
+    flash[:notice] = 'La imagen fue eliminada!' if @post_image.destroy
+    respond_with(@post_images, location: category_post_post_images_url) 
+  end 
 
   private
 

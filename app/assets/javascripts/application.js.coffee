@@ -17,6 +17,7 @@
 #= require checkbox
 #= require bootstrap-editable.min
 #= require bootstrap-editable-rails
+#= require modal
 #= require post
 #
 
