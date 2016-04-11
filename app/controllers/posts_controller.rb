@@ -31,7 +31,8 @@ class PostsController < BaseController
 
   def index
     @post_form_presenter = PostFormPresenter.new(view_context)
-    @params_status = status_params
+    @params_status = status_params_lost
+    @params_status_adopcion= status_params_adoption
     @post_search = PostSearch.new(post_search_params)
     @posts = @post_search.results.where(category_id: params[:category_id]).page(params[:page] )
   end
@@ -78,14 +79,15 @@ class PostsController < BaseController
   end
 
   def post_search_params
-   (params[:post_search] || {}).merge(is_adoption: status_params)
+   (params[:post_search] || {}).merge(is_adoption: status_params_adoption, is_lost: status_params_lost)
   end
   
   def status_post
-    @category.adoption ? :en_adopcion : nil
+    @category.adoption &&  !@category.losts ? :en_adopcion : nil
+    @category.losts && !@category.adoption ? :perdido : nil
   end
 
-  def status_params
+  def status_params_adoption
     if @category.name == 'Adopción' && params[:status] == 'en_adopcion'
       true
     elsif @category.name == 'Adopción' && params[:status] == 'adoptado'
@@ -93,5 +95,16 @@ class PostsController < BaseController
     else
       'either'
     end      
-  end  
+  end
+
+
+  def status_params_lost
+    if @category.name == 'Perdidos' && params[:status] == 'perdido'
+      true
+    elsif @category.name == 'Perdidos' && params[:status] == 'reencuentro'
+      false
+    else
+      'either'
+    end      
+  end
 end

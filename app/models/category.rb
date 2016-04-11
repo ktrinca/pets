@@ -4,7 +4,7 @@ class Category < ActiveRecord::Base
   def adoption
     self.name == "Adopción"
   end
-  
+    
   def losts
     self.name == "Perdidos"
   end

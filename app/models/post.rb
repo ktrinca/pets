@@ -20,6 +20,7 @@ class Post < ActiveRecord::Base
   scope :for_adoption, -> { where(status: 0) }
   scope :already_adopted, -> { where(status: 1) }
   scope :already_found, -> { where(status: 3) }
+  scope :losts, -> { where(status: 2) }
 
   pg_search_scope :look_for,
     against: %w(title body category_id),

@@ -1,28 +1,16 @@
-<div class="text-center">
+<section class ="success col-md-20" id="categories">
 <% @posts.each_with_index do |post, index|%>
-    <% if index%2 == 0 %> <div class='row'> <div class="col-lg-3 col-lg-offset-3"> <% end %>
-    <% if index%2 != 0 %>  <div class="col-lg-3"> <% end %>
-      <div class="content-post">
-        <div class="title">
-          <h4 class="text-default">
-            <span><%= post.title %>  <%= (image_tag @category.image_icon, class: 'icon-list pull-right') if !@category.image_icon.nil? %></span>
+    <div class="col-sm-6">
+      <div class="thumbnail">
+        <%= image_tag post.image, size: '200x200', class: 'img-responsive' %>
+        <div class="caption">
+          <h4>
+            <%= link_to  post.title, category_post_path(@category, post), :title => "Ver Más"%>
           </h4>
           
-        </div>  
-        <div class="shrink">
-          <%= link_to image_tag(post.image, size: '120', class: 'img-circle'), 
-            category_post_path(@category, post), class: "pull-right text-success"%>
-            <p>
-              <%= truncate(strip_tags(post.body), length: 80) %>
-              <%= link_to category_post_path(@category, post), class: "text-primary small" do%>
-                Ver más
-               
-              <% end %>
-            </p>
         </div>
       </div>
-  
-      </div>  
-    <% if index%2 != 0 %> </br></div> <% end %>
+    </div>
+
 <% end %>
-</div>
+</section>

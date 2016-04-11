@@ -16,7 +16,7 @@
             </thead>
             <tbody id="post_image" class="sortable" data-url="<%= sort_category_post_post_images_path(@category, @post) %>">
               <div class="container">
-              <div class="row" id="image_row">
+              <div class="row alert alert-success" id="image_row">
                 <%= render(@post_images) %>
                 <hr>
                 <hr>
@@ -36,11 +36,11 @@
       <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
     
         <div class="container-fluid clearfix">
-          <%= link_to '#', class: 'btn btn-primary navbar-btn pull-left', id: 'images-add' do %>
+          <%= link_to '#', class: 'btn btn-danger navbar-btn pull-right', id: 'images-add' do %>
             <span class="glyphicon glyphicon-upload"></span> Agregar Foto
           <% end %>
       
-          <%= link_to category_post_path(@category, @post), class: 'btn navbar-btn btn-sm btn-default pull-right' do %>
+          <%= link_to category_post_path(@category, @post), class: 'btn btn-default navbar-btn pull-right' do %>
             <i class="fa fa-arrow-left"></i> <span class="hidden-xs">Volver al post</span>
           <% end %>
         </div>

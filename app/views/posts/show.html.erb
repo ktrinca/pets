@@ -10,9 +10,9 @@
     </div>
   </div>
   
-  <div class="row" > 
+  <div class="row alert alert-success" > 
     <div class="col-md-6 col-sm-12">
-      <div class="panel panel-default">
+      <div class="panel panel-primary">
         <div class="panel-heading">
           <h3 class="panel-title"><h3><%= @post.title %></h3></h3>
         </div>
@@ -22,19 +22,21 @@
               <a class="pull-left text-success" href="venue.php">
                 <%= image_tag @post.image, size: '140', class: 'img-circle'%>
               </a>
-              <p><%= @post.body %></p>      
+                <div class="text-primary"><p><%= @post.body %></p></div>
             </div>
           </div>
           
           <div class="panel-footer success">
-            <h3 class="panel-title"><b>Contacto:</b> <%="#{@post.contact.full_name} - Tel: #{@post.contact.phone}" %></h3>
+            <div class="text-primary">
+              <h3 class="panel-title"><b>Contacto:</b> <%="#{@post.contact.full_name} - Tel: #{@post.contact.phone}" %></h3>
+            </div>    
           </div>
         </div>
       </div>
     </div>
   
     <div class="col-md-6 col-sm-12">
-      <div class="panel panel-default">
+      <div class="panel panel-primary">
         <div class="panel-heading">
           <h3 class="panel-title">Fotos</h3>
         </div>
@@ -99,7 +101,7 @@
             <% end %>
             
             <%= link_to category_post_post_images_path(@category, @post), class: 'btn btn-lg navbar-btn btn-danger' do %>
-              <i class="fa fa-image"></i> <span class="hidden-xs">Agregar Fotos</span>
+              <i class="fa fa-image"></i> <span class="hidden-xs">Fotos</span>
             <% end %>
           <% end %>
           

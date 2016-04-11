@@ -1,22 +1,45 @@
-<section class ="success" id="categories">
+<section class ="success col-md-20" id="categories">
   <div class="content"> 
     <div id="my-posts"></br>
-      <div class="row">
-        <div class="col-md-12 text-center">  
-          <div class="col-lg-12 text-center">
-            <h2>Listado de <%=@category.name%></h2>
-            <hr class="star-light">
+     <div class="row margin-b-2">
+        <h2>Listado de <%=@category.name%></h2>
+        <hr class="star-light">
+        <div class="container">  
+          <div class="col-sm-3 col-md-3 pull-right">
+              <div class="panel-group">
+                <div class="panel panel-warning">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapse1">Buscador</a>
+                    </h4>
+                  </div>
+                  <div id="collapse1" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                      <%= render("/categories/#{@category.name_as_folder}/filters") %>
+                    </div>
+                    <div class="panel-footer">Panel Footer</div>
+                  </div>
+                </div>
+              </div>
+
           </div>
-            <%= render("/categories/#{@category.name_as_folder}/filters") %>
-            <%= render "posts/posts" %>
-            <div id="infinite-scrolling" class="text-center">
+          <div class="row col-sm-9" id="more-post">
+            <%= render "posts/posts" %> </br>
+          </div>
+          <div class="row col-sm-9" >
+            </br></br></br></br></br></br>
+            <div id="infinite-scrolling" class="text-center" >
               <%= will_paginate %>
             </div>
-        </div>  
+          </div>
+          
+        </div> 
+
       </div>  
     </div>  
   </div>  
-</section>  
+
 <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
   <%= render('nav/footer') %> 
 </nav>  
+</section>  
