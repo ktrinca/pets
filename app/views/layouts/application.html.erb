@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FaunArea</title>
-    <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %> 
+  
+    <%= stylesheet_link_tag  'application', media: 'all',
+	'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application',
+	'data-turbolinks-track' => true %> 
     <%= csrf_meta_tags %>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+   
   </head>
 
-  <body id="page-top" class="uccess">
+  <body id="page-top" class="success">
     <%= render('nav/index') %>
     <%= yield %>
   </body>

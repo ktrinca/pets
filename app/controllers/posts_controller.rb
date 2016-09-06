@@ -83,8 +83,11 @@ class PostsController < BaseController
   end
   
   def status_post
-    @category.adoption &&  !@category.losts ? :en_adopcion : nil
-    @category.losts && !@category.adoption ? :perdido : nil
+    if @category.adoption  
+      @category.adoption &&  !@category.losts ? :en_adopcion : nil
+    else
+      @category.losts && !@category.adoption ? :perdido : nil
+    end  
   end
 
   def status_params_adoption

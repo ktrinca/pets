@@ -3,19 +3,20 @@
     <%= hidden_field_tag :status, params[:status] %>
 
     <div class="form-group">
-      <%= f.input :look_for, placeholder: 'Buscar...', input_html: { class: 'form-control input-sm' }, label_html: { class: 'sr-only' } %>
+      <%= f.input :look_for, placeholder: 'Buscar...', input_html: { class: 'form-control input-xsmall' }, label_html: { class: 'sr-only' } %>
     </div>
     
     <div class="form-group">  
-      <%= f.input :pet, collection: @post_form_presenter.pets, include_blank: 'todos', input_html: { class: 'form-control input-sm'}, required: false, label_html: { class: 'sr-only' }, :multiple => true, :selected => ['1'] %>
+      <%= f.input :pet, collection: @post_form_presenter.pets, include_blank: 'todos', input_html: { class: 'form-control input-xsmall'}, required: false, label_html: { class: 'sr-only' }, :multiple => true, :selected => ['1'] %>
     </div>
    
     <%= button_tag class: 'btn btn-warning btn-circle', name: nil do %>
-      <i class="fa fa-search"></i> <span class="hidden-xs">Buscar</span>
+      <i class="fa fa-search"></i> 
     <% end %>
     <%= link_to category_posts_path(@category, status: params[:status]), class: 'btn btn-default btn-circle' do %>
-      <i class="fa fa-ban"></i> <span class="hidden-xs">Borrar</span>
+      <i class="fa fa-ban"></i> 
     <% end %>
   
   
   <% end %>
+    

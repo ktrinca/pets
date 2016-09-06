@@ -137,7 +137,11 @@ margin-left:auto;padding-left:15px;padding-right:15px}@media (min-width:768px){.
   box-shadow: 0 0 2px orange;
   border-radius: 4%;
 }  
-
+.content {
+  max-width: 90%;
+  width:90%;
+  margin:25px auto;
+}
 
 .title {
   border-bottom: 1px solid #62a75f;
@@ -241,4 +245,36 @@ margin-left:auto;padding-left:15px;padding-right:15px}@media (min-width:768px){.
 {
   margin-top: 3em;
   margin-bottom: 3em;
+}
+
+/************************************************************************************
+MEDIA QUERIES
+*************************************************************************************/
+
+@media screen and (min-width: 320px) and (max-width:568px) {
+  .content {
+   max-width: 90%;
+  }
+  section h2{
+    font-size: 20px;
+  }
+  h3{
+    font-size: 22px;
+  }
+
+  h5{
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 800px) {
+  #container {
+   max-width: 90%;
+  }
+  h2{
+    font-size: 50px;
+  }
+  h3{
+    font-size: 22px;
+  }
 }
