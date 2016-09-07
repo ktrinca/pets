@@ -1,16 +1,17 @@
 <!-- Header -->
-<header>
-  <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul>
-        <li class="page-scroll">
-          <%= link_to image_tag("Faunarea_landscape.jpg", class: "img-responsive"), "#categories" %>
-        </li>
-      </ul>
-    </div>  
-  <div class="container">
-  </div>
-</header>
+ <header>
+   <div class="container">
+     <div class="row">
+       <div class="col-lg-12">
+         <%= link_to image_tag("Faunarea_landscape.jpg", class: "img-responsive"), "#categories" %>
+         <div class="intro-text">
+                       
+         </div>
+       </div>
+     </div>
+    </div>
+  </header>
+
 
 <%= render('common/sections', categories: @categories) %>
 <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
