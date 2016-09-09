@@ -11,7 +11,7 @@ h2{
     color: #666;
     text-align: center;
     padding-top: 2px;
-    font-size: 52px;
+    font-sizefre: 52px;
     font-family: "trebuchet ms", sans-serif;    
 }
 
@@ -257,7 +257,7 @@ MEDIA QUERIES
    max-width: 90%;
   }
   section h2{
-    font-size: 20px;
+    font-size: 40px;
   }
   h3{
     font-size: 22px;
@@ -265,11 +265,10 @@ MEDIA QUERIES
   h5{
     font-size: 16px;
   }
-  /*.page-scroll{
-    max-width: 16px;
-    border: 3px solid #ccc;
-  }*/
-  
+
+  #categories .portfolio-item .portfolio-link {
+    max-width: 300px;
+  }
 }
 
 @media screen and (min-width: 600px) and (max-width: 800px) {
@@ -277,9 +276,13 @@ MEDIA QUERIES
    max-width: 90%;
   }
   h2{
-    font-size: 50px;
+    font-size: 20px;
   }
   h3{
     font-size: 22px;
+  }
+
+  #categories .portfolio-item .portfolio-link {
+    max-width: 300px;
   }
 }
