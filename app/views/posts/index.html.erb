@@ -10,20 +10,7 @@
     <div class="row text-center" style="border: 1px solid #ddd">
       <div class="col-md-3"></div>
       <div class="col-md-6 panel-group">
-        <div class="panel panel-info">
-           <div class="panel-heading">
-             <h4 class="panel-title">
-               <a data-toggle="collapse" href="#collapse1">
-                 Buscador
-	       </a>
-	     </h4>
-           </div>
-
-	   <div id="collapse1" class="panel-collapse collapse">
-           <div class="panel-body">Panel Body</div>
-           <div class="panel-footer">Panel Footer</div>
-          </div>
-        </div>
+        <%= render("/categories/#{@category.name_as_folder}/filters") %>
       </div>
       <div class="col-md-3"></div>
 
