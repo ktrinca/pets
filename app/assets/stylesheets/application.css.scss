@@ -1,3 +1,4 @@
+
 /**
  *= require freelancer
  *= bootstrap-editable
@@ -250,14 +251,18 @@ margin-left:auto;padding-left:15px;padding-right:15px}@media (min-width:768px){.
 
 /************************************************************************************
 MEDIA QUERIES
-*************************************************************************************/
+*************************************************
+************************************/
 
 @media screen and (min-width: 320px) and (max-width:568px) {
   .content {
    max-width: 90%;
   }
-  section h2{
-    font-size: 40px;
+  section h2 {
+    font-size: 35px;
+  }
+  h2{
+   font-size: 10px;
   }
   h3{
     font-size: 22px;
@@ -275,8 +280,8 @@ MEDIA QUERIES
   #container {
    max-width: 90%;
   }
-  h2{
-    font-size: 20px;
+  section h2{
+    font-size: 35px;
   }
   h3{
     font-size: 22px;

@@ -1,47 +1,40 @@
 <section class ="success col-md-20" id="categories">
-  <div class="content"> 
-    <div id="my-posts"></br>
-     <div id="test" class="row margin-b-2">
+  <div class="content">
+    <div class="row">
+      <div class="">
         <h2>Listado de <%=@category.name%></h2>
-        <hr class="star-light">
-          
-          <div class="col-sm-3 col-md-3">
-              <div class="panel-group">
-                <div class="panel panel-warning">
-                  <div class="panel-heading">
-                    <h4 class="panel-title">
-                      <a data-toggle="collapse" href="#collapse1">Buscador</a>
-                    </h4>
-                  </div>
-                  <div id="collapse1" class="panel-collapse collapse in">
-                    <div class="panel-body">
-                      <%= render("/categories/#{@category.name_as_folder}/filters") %>
-                    </div>
-                    <div class="panel-footer">Panel Footer</div>
-                  </div>
-                </div>
-              </div>
-          </div>
-          
-          
-        <div class="container">  
-          <div class="row col-sm-9" id="more-post">
-            <%= render "posts/posts" %> </br>
-          </div>
-          <div class="row col-sm-9" >
-            </br></br></br></br></br></br>
-            <div id="infinite-scrolling" class="text-center" >
-              <%= will_paginate %>
-            </div>
-          </div>
-          
-        </div> 
+        <hr class="star-primary">
+      </div>
+    </div>
 
-      </div>  
+    <div class="row text-center" style="border: 1px solid #ddd">
+      <div class="col-md-3"></div>
+      <div class="col-md-6 panel-group">
+        <div class="panel panel-info">
+           <div class="panel-heading">
+             <h4 class="panel-title">
+               <a data-toggle="collapse" href="#collapse1">
+                 Buscador
+	       </a>
+	     </h4>
+           </div>
+
+	   <div id="collapse1" class="panel-collapse collapse">
+           <div class="panel-body">Panel Body</div>
+           <div class="panel-footer">Panel Footer</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3"></div>
+
+    </div>  
+    
+    <div id="my-posts">
+      
     </div>  
   </div>  
 
-<nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+  <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
   <%= render('nav/footer') %> 
 </nav>  
 </section>  
