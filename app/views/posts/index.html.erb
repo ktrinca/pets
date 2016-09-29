@@ -7,7 +7,7 @@
       </div>
     </div>
 
-    <div class="row text-center" style="border: 1px solid #ddd">
+    <div class="row text-center">
       <div class="col-md-3"></div>
       <div class="col-md-6 panel-group">
         <%= render("/categories/#{@category.name_as_folder}/filters") %>
@@ -17,8 +17,21 @@
     </div>  
     
     <div id="my-posts">
-      
-    </div>  
+      <div class="col-md-3"></div> 
+
+      <div class="col-md-6 text-center" id="more-post" style="border: 1px solid #000">
+	<%= render "posts/posts" %>
+      </div>
+
+      <div class="row col-sm-9" >
+        </br></br></br></br>
+        <div id="infinite-scrolling" class="text-center" >
+          <%= will_paginate %>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-3"></div> 
   </div>  
 
   <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">

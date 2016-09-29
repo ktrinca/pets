@@ -1,6 +1,6 @@
-<section class ="success col-md-20" id="categories">
+
 <% @posts.each_with_index do |post, index|%>
-    <div class="col-sm-6">
+    <div class="col-xs-6">
       <div class="thumbnail">
         <%= image_tag post.image, size: '200x200', class: 'img-responsive' %>
         <div class="caption">
@@ -13,4 +13,3 @@
     </div>
 
 <% end %>
-</section>
